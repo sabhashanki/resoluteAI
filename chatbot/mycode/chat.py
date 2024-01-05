@@ -8,14 +8,14 @@ import time
 
 # Initialization
 llm = OpenAI()
+embeddings = OpenAIEmbeddings()
+vector_db = FAISS.load_local("faiss_index", embeddings)
 chain = load_qa_chain(llm, chain_type='stuff')
 add_company_logo()
-st.session_state.messages = []
+
 
 # Generate OpenAI Embeddings and indexing vector DB
 def query_answer(query):
-    embeddings = OpenAIEmbeddings()
-    vector_db = FAISS.load_local("faiss_index", embeddings)
     docs = vector_db.similarity_search(query)
     response = chain.run(input_documents=docs, question=query)
     return response
