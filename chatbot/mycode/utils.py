@@ -3,18 +3,25 @@ import streamlit as st
 from streamlit_extras.app_logo import add_logo 
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
-from langchain.llms import OpenAI
+from langchain.vectorstores import FAISS, Chroma, Qdrant
 from deep_translator import GoogleTranslator
-from dotenv import load_dotenv
+import pickle
+import streamlit_authenticator as stauth
+from pathlib import Path
+import configparser
 
-def extract_pdf(pdf):
-    if pdf is not None:
+# Initialization
+config = configparser.ConfigParser()
+config.read('./config.ini') 
+
+
+def extract_pdf(pdf_folder):
+    text = ""
+    for pdf in pdf_folder:
         pdf_reader = PdfReader(pdf)
-        text = ""
         for page in pdf_reader.pages:
             text += page.extract_text()
+        st.success(f'Extracted : {pdf.name}', icon="✅")
     return text
 
 
@@ -23,18 +30,30 @@ def process_text(text):
     text_splitter = CharacterTextSplitter(
         separator="\n",
         chunk_size=1000,
-        chunk_overlap=200,
+        chunk_overlap=100,
         length_function=len
     )
     chunks = text_splitter.split_text(text)
     
     # Convert the chunks of text into embeddings to form a knowledge base
-    st.write('Creating embeddings.... Please wait')
     embeddings = OpenAIEmbeddings()
-    vector_db = FAISS.from_texts(chunks, embeddings)
-    vector_db.save_local("faiss_index")
-    # new_db = FAISS.load_local("faiss_index", embeddings)
-    st.write('Embeddings generated... Click on the chat button to start the conversation')
+    vec_db_name = config['VECTOR_DB']['MODEL_NAME']
+
+    if vec_db_name == 'FAISS':
+        st.info('Creating OpenAI embeddings with FAISS.... Please wait', icon="ℹ️")
+        vector_db = FAISS.from_texts(chunks, embeddings)
+        vector_db.save_local("faiss_index")
+
+    if vec_db_name == 'CHROMA':
+        st.info('Creating OpenAI embeddings with CHROMA.... Please wait', icon="ℹ️")
+        vector_db = Chroma.from_texts(chunks, embeddings, persist_directory = "chroma_index")
+
+
+    # if vec_db_name == 'QDRANT':
+    #     st.info('Creating OpenAI embeddings with QDRANT.... Please wait', icon="ℹ️")
+    #     vector_db = Qdrant.from_texts(embeddings, path="qdrant_index", collection_name="my_documents")
+
+    st.success('Embeddings generated... Click on the chat button to start the conversations', icon="✅")
 
 
 def translate_text(text, source='auto', target='hi'):
@@ -53,8 +72,8 @@ def add_company_logo():
                 }
                 [data-testid="stSidebarNav"]::before {
                     content: "My Company Name";
-                    margin-left: 20px;
-                    margin-top: 20px;
+                    margin-left: 0px;
+                    margin-top: 0px;
                     font-size: 1px;
                     position: relative;
                     top: 1px;
@@ -75,7 +94,7 @@ def add_company_logo():
         """,
             unsafe_allow_html=True,
         )
-    
+     
     
 def set_sidebar_state():
     # set sidebar collapsed before login
@@ -88,10 +107,43 @@ def set_sidebar_state():
             [data-testid="collapsedControl"] {visibility:hidden;}
             </style>
             """
-
-    # set sidebar expanded after login
-    # if login_after:
-    #     st.session_state.sidebar_state = 'expanded'
-    # else:
     st.session_state.sidebar_state = 'collapsed'
     st.markdown(hide_bar, unsafe_allow_html=True)
+
+def login():
+    # Reading login information
+    user_info = {}
+    cred_path = Path(__file__).parent / "./hashed_passwords.pkl"
+    with cred_path.open('rb') as file:
+        user_info = pickle.load(file)
+
+    credentials = {
+        'usernames' : {
+            user_info['usernames'][0] : {
+                'name' : user_info['names'][0],
+                'password' : user_info['passwords'][0]
+            }
+        }
+    }
+    cookie_name = 'sample_app'
+    authenticator = stauth.Authenticate(credentials, cookie_name, 'abcd', cookie_expiry_days=60)
+
+    st.session_state['authenticator'] = authenticator
+    st.session_state['cookie_name'] = cookie_name
+    name, authentication_status, username = authenticator.login("Login", "main")
+    return authentication_status, authenticator
+
+def logout():
+    login.authenticator.cookie_manager.delete(login.cookie_name)
+    st.session_state['logout'] = True
+    st.session_state['name'] = None
+    st.session_state['username'] = None
+    st.session_state['authentication_status'] = None
+
+hide_bar = '''
+<style>
+    [data-testid="stSidebar"] {
+        display: none;
+    }
+</style>
+'''

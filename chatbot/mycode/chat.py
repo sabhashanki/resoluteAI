@@ -3,14 +3,23 @@ from langchain.llms import OpenAI
 import streamlit as st
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
+from langchain.vectorstores import FAISS, Chroma, Qdrant
 from utils import translate_text, add_company_logo
 import time
+import configparser
 
 # Initialization
+config = configparser.ConfigParser()
+config.read('./config.ini') 
+vec_db_name = config['VECTOR_DB']['MODEL_NAME']
 llm = OpenAI()
 embeddings = OpenAIEmbeddings()
-vector_db = FAISS.load_local("faiss_index", embeddings)
+if vec_db_name == 'FAISS':
+    vector_db = FAISS.load_local("faiss_index", embeddings)
+if vec_db_name == 'CHROMA':
+    vector_db = Chroma(persist_directory="chroma_index", embedding_function=embeddings)
+# if vec_db_name == 'QDRANT':
+#     vector_db = Qdrant.load_local("qdrant_index", embeddings)
 chain = load_qa_chain(llm, chain_type='stuff')
 add_company_logo()
 
@@ -36,30 +45,32 @@ def chatbox(source, target):
 
     # Accept user input
     if prompt := st.chat_input("Ask question about PDF content?"):
+        
         # Add user message to chat history
         st.session_state.messages.append({"role": "user", "content": prompt})
+
         # Display user message in chat message container
         with st.chat_message("user"):
-            st.markdown(translate_text(prompt, source, target))
+            st.markdown(prompt)
 
         # Display assistant response in chat message container
         with st.chat_message("assistant"):
             message_placeholder = st.empty() 
-            result = translate_text(query_answer(prompt), source, target) 
+            raw_prompt = translate_text(prompt, target, source)
+            result = translate_text(query_answer(raw_prompt), source, target) 
             result2 = ""
             for chunk in result.split():
                 result2 += chunk + " "
                 time.sleep(0.3)
-                # Add a blinking cursor to simulate typing
                 message_placeholder.markdown(result2 + "▌")
-            # message_placeholder.markdown(result)
+
         st.session_state.messages.append({"role": "assistant", "content": result})
 
 if user_lang == 'Tamil':
-    chatbox('auto','tamil')
+    chatbox('en','tamil')
 
 if user_lang == 'English':
     chatbox('auto','en')
 
 if user_lang == 'Hindi':
-    chatbox('auto','hi')
+    chatbox('en','hi')

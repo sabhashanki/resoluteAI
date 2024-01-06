@@ -8,6 +8,7 @@ from st_pages import Page, show_pages, add_page_title, Section, add_indentation
 
 from extractor import scrape_and_create_embeddings_1,scrape_and_create_embeddings_2
 
+
 # get user information
 user_info = {}
 cred_path = Path(__file__).parent / "./hashed_passwords.pkl"
