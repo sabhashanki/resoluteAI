@@ -4,6 +4,7 @@ import yaml
 from utils import add_company_logo
 from yaml.loader import SafeLoader
 from st_pages import Page, show_pages
+st.set_page_config(layout = "wide")
 
 def main():
     add_company_logo()
