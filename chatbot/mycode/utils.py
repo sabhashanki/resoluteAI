@@ -2,7 +2,7 @@ from PyPDF2 import PdfReader
 import streamlit as st  
 from streamlit_extras.app_logo import add_logo 
 from langchain.text_splitter import CharacterTextSplitter
-from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain.embeddings import OllamaEmbeddings
 from langchain.vectorstores import FAISS, Chroma, Qdrant
 from deep_translator import GoogleTranslator
 import pickle
@@ -36,7 +36,7 @@ def process_text(text):
     chunks = text_splitter.split_text(text)
     
     # Convert the chunks of text into embeddings to form a knowledge base
-    embeddings = OpenAIEmbeddings()
+    embeddings = OllamaEmbeddings()
     vec_db_name = config['VECTOR_DB']['MODEL_NAME']
 
     if vec_db_name == 'FAISS':

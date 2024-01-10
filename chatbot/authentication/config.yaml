@@ -1,0 +1,39 @@
+cookie:
+  expiry_days: 30
+  key: some_signature_key
+  name: some_cookie_name
+credentials:
+  usernames:
+    elephant_man:
+      email: elephant_lover@gmail.com
+      name: Andro Shanki
+      password: $2b$12$S4Zc5CFYDOSFV9Wi35pOY.qMAzv7f6xQ0g5B4b6DgkzOWzmRPEXTu
+preauthorized:
+  emails:
+  - melsby@gmail.com
+cookie:
+  expiry_days: 30
+  key: some_signature_key
+  name: some_cookie_name
+credentials:
+  usernames:
+    elephant_man:
+      email: elephant_lover@gmail.com
+      name: Andro Shanki
+      password: $2b$12$S4Zc5CFYDOSFV9Wi35pOY.qMAzv7f6xQ0g5B4b6DgkzOWzmRPEXTu
+preauthorized:
+  emails:
+  - melsby@gmail.com
+cookie:
+  expiry_days: 30
+  key: some_signature_key
+  name: some_cookie_name
+credentials:
+  usernames:
+    elephant_man:
+      email: elephant_lover@gmail.com
+      name: Andro Shanki
+      password: $2b$12$S4Zc5CFYDOSFV9Wi35pOY.qMAzv7f6xQ0g5B4b6DgkzOWzmRPEXTu
+preauthorized:
+  emails:
+  - melsby@gmail.com

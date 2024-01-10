@@ -1,8 +1,10 @@
 from langchain.chains.question_answering import load_qa_chain
-from langchain.llms import OpenAI
+from langchain.llms import Ollama
 import streamlit as st
+from langchain.callbacks.manager import CallbackManager
+from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain.embeddings import OllamaEmbeddings
 from langchain.vectorstores import FAISS, Chroma, Qdrant
 from utils import translate_text, add_company_logo
 import time
@@ -12,8 +14,11 @@ import configparser
 config = configparser.ConfigParser()
 config.read('./config.ini') 
 vec_db_name = config['VECTOR_DB']['MODEL_NAME']
-llm = OpenAI()
-embeddings = OpenAIEmbeddings()
+llm = Ollama(
+    model="llama2",
+    callback_manager=CallbackManager([StreamingStdOutCallbackHandler()]),
+)
+embeddings = OllamaEmbeddings()
 if vec_db_name == 'FAISS':
     vector_db = FAISS.load_local("faiss_index", embeddings)
 if vec_db_name == 'CHROMA':
