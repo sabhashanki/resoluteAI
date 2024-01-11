@@ -56,37 +56,40 @@ user_lang =st.selectbox('Select Language', (
     ))
 
 def chatbox(target):
+    if not st.session_state["authentication_status"]:
+        st.subheader('Login and upload PDFs to access the chat module')
+    
+    else:
+        # Initialize chat history
+        if "messages" not in st.session_state:
+            st.session_state.messages = []
 
-    # Initialize chat history
-    if "messages" not in st.session_state:
-        st.session_state.messages = []
+        # Display chat messages from history on app rerun
+        for message in st.session_state.messages:
+            with st.chat_message(message["role"]):
+                st.markdown(message["content"])
 
-    # Display chat messages from history on app rerun
-    for message in st.session_state.messages:
-        with st.chat_message(message["role"]):
-            st.markdown(message["content"])
+        # Accept user input
+        if prompt := st.chat_input("Ask question about PDF content?"):
+            
+            # Add user message to chat history
+            st.session_state.messages.append({"role": "user", "content": prompt})
 
-    # Accept user input
-    if prompt := st.chat_input("Ask question about PDF content?"):
-        
-        # Add user message to chat history
-        st.session_state.messages.append({"role": "user", "content": prompt})
+            # Display user message in chat message container
+            with st.chat_message("user"):
+                st.markdown(prompt)
 
-        # Display user message in chat message container
-        with st.chat_message("user"):
-            st.markdown(prompt)
+            # Display assistant response in chat message container
+            with st.chat_message("assistant"):
+                message_placeholder = st.empty() 
+                raw_prompt = translate_text(prompt, 'auto', 'en')
+                result = translate_text(query_answer(raw_prompt), 'en', target) 
+                result2 = ""
+                for chunk in result.split():
+                    result2 += chunk + " "
+                    time.sleep(0.1)
+                    message_placeholder.markdown(result2 + "▌")
 
-        # Display assistant response in chat message container
-        with st.chat_message("assistant"):
-            message_placeholder = st.empty() 
-            raw_prompt = translate_text(prompt, 'auto', 'en')
-            result = translate_text(query_answer(raw_prompt), 'en', target) 
-            result2 = ""
-            for chunk in result.split():
-                result2 += chunk + " "
-                time.sleep(0.1)
-                message_placeholder.markdown(result2 + "▌")
-
-        st.session_state.messages.append({"role": "assistant", "content": result})
+            st.session_state.messages.append({"role": "assistant", "content": result})
 
 chatbox(lang_select(user_lang))

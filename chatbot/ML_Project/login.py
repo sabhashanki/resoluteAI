@@ -33,11 +33,7 @@ def main():
         process_button=st.button("Proceed")
         if process_button:
             raw_text = extract_pdf(pdf_folder)
-            process_text(raw_text)    
-            # show_pages([Page("chat.py", "Chat"), ])
-            # add_indentation() 
-
-       
+            process_text(raw_text)        
 
     elif st.session_state["authentication_status"] is False:
         st.error('Username/password is incorrect')

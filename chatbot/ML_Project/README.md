@@ -1,13 +1,13 @@
 # Mulitple PDFs Chat using LangChain 
 ### OpenAI - (Embeddings and LLM)
-### Vector DB - (FAISS and CHROMA)
-### Supported Languages - (English, Tamil, Hindi, Marathi, Malayalam, Telugu, Kannada)
+### Vector DB - (FAISS)
+### Supported Languages - (English, Tamil, Hindi, Marathi, Malayalam, Telugu, Kannada, Assamese, Bengali, Gujarait, Konkani, Oriya, Punjab, Sanskrit, Urdu, Chinese(Simplifies), French, Korean, Japanese, Portuguese, Italian, Russian)
 
 ### Setup
 ```
 pip install langchain langchain-community openai faiss-cpu streamlit streamlit_authenticator PyYAML st_pages deep_translator pathlib configparser PyPDF2 pickle4 langchain_openai python-dotenv streamlit_extras chromadb
 ```
-Incase of having gpu 
+#### Incase of having GPU 
 
 ```
 pip install langchain openai faiss-gpu streamlit streamlit_authenticator PyYAML st_pages deep_translator pathlib configparser PyPDF2 pickle4 langchain_openai python-dotenv streamlit_extras chromadb
@@ -18,7 +18,7 @@ pip install langchain openai faiss-gpu streamlit streamlit_authenticator PyYAML 
 "api_key"
 3. You can change the vector database to use in config.ini. 
 
-```MODEL_NAME = CHROMA #for chroma vector DB``` 
+```MODEL_NAME = CHROMA #for chroma vector DB..``` 
 
 ```MODEL_NAME = FAISS  #for faiss vector DB```
 
@@ -29,3 +29,12 @@ pip install langchain openai faiss-gpu streamlit streamlit_authenticator PyYAML 
 8. After extracting text from PDF, embeddings will be generated and stored as vector index
 9. After embedding generation, click on the chat menu from sidebar to access the chat module
 10. Choose the language to chat with AI (incase of indian languages input can be of either respective indian language or english)
+
+### Screenshots
+
+![Alt text](images/2.png)
+![Alt text](images/4.png)
+![Alt text](images/5.png)
+![Alt text](images/3.png)
+![Alt text](images/6.png)
+![Alt text](images/1.png)

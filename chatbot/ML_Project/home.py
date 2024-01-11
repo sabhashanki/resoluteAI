@@ -29,7 +29,7 @@ def main():
                 Page("chat.py", "Chat", in_section=False),
                 Page("login.py", "Login"), 
                 Page("register.py", "Register"), 
-                Page("reset_pass.py", "Reset Password"),
+                Page("reset_pass.py", "Change Password"),
                 Page("forgot_pass.py", "Forgot Password"), 
                 Page("update_profile.py", "Update Profile"), 
                 Page("about.py", "About")
