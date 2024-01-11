@@ -18,7 +18,9 @@ def main():
         if authenticator.update_user_details(st.session_state["username"], 'Update user details'):
             st.success('Entries updated successfully')
 
-
+    if not st.session_state["authentication_status"]:
+        st.subheader('You need to login to update the profile')
+        
     with open('./config.yaml', 'a') as file:
         yaml.dump(config, file, default_flow_style=False)
 

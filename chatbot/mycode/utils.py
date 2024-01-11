@@ -2,7 +2,7 @@ from PyPDF2 import PdfReader
 import streamlit as st  
 from streamlit_extras.app_logo import add_logo 
 from langchain.text_splitter import CharacterTextSplitter
-from langchain.embeddings import OllamaEmbeddings
+from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS, Chroma, Qdrant
 from deep_translator import GoogleTranslator
 import pickle
@@ -36,7 +36,7 @@ def process_text(text):
     chunks = text_splitter.split_text(text)
     
     # Convert the chunks of text into embeddings to form a knowledge base
-    embeddings = OllamaEmbeddings()
+    embeddings = OpenAIEmbeddings()
     vec_db_name = config['VECTOR_DB']['MODEL_NAME']
 
     if vec_db_name == 'FAISS':
@@ -147,3 +147,32 @@ hide_bar = '''
     }
 </style>
 '''
+
+def lang_select(user_lang):
+    lang = {
+'Tamil':  'ta',
+'English': 'en',
+'Hindi':   'hi',
+'Marathi':   'mr',
+'Malayalam':   'ml',
+'Kannada':   'ka',
+'Telugu':   'tl',
+'Assamese':   'as',
+'Gujarati':   'gu',
+'Oriya':   'or',
+'Punjabi':   'pa',
+'Bengali':   'bn',
+'Spanish':   'es',
+'Urdu':   'ur',
+'Sanskrit' : 'sa',
+'Chinese(simplified)': 'zh-CN',
+'French':   'fr',
+'Korean':   'ko',
+'Japanese':   'ja',
+'Portuguese':   'pt',
+'Italian':   'it',
+'Russian':   'ru'
+}
+    for key, value in lang.items():
+        if user_lang == key:
+            return value

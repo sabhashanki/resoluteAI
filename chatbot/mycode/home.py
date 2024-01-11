@@ -21,13 +21,13 @@ def main():
 
     st.markdown("# Welcome to Chatbot Main page 🎈")
     show_pages([Page("home.py", "Home"),
+                Page("chat.py", "Chat", in_section=False),
                 Page("login.py", "Login"), 
                 Page("register.py", "Register"), 
                 Page("reset_pass.py", "Reset Password"),
                 Page("forgot_pass.py", "Forgot Password"), 
                 Page("update_profile.py", "Update Profile"), 
                 Page("about.py", "About"), 
-                Page("chat.py", "Chat", in_section=False)
                 ])
     
 

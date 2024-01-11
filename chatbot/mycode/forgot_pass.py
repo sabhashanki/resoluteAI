@@ -18,7 +18,7 @@ def main():
     username_forgot_pw, email, random_password = authenticator.forgot_password('Forgot password')
     if username_forgot_pw:
         st.success(f'New random password is : {random_password}.. Change it in next login')
-        # Random password to be transferred to user securely
+
     elif username_forgot_pw == False:
         st.error('Username not found')
 
