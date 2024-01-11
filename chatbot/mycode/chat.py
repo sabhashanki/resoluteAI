@@ -33,8 +33,8 @@ with st.sidebar:
                 'md',
                 )
             )
-    file_folder = st.file_uploader("Upload your PDF Document",type=['pdf','txt','md','rst'],accept_multiple_files=True)           
-    process_button=st.button("Proceed")
+    file_folder = st.file_uploader("Upload the document",type=['pdf','txt','md','rst'],accept_multiple_files=True)           
+    process_button=st.button("Create Embeddings")
     if process_button:
         if doc_type == 'pdf':
             raw_text = extract_pdf(file_folder)

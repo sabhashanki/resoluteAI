@@ -24,6 +24,7 @@ def main():
 
     if st.session_state["authentication_status"]:
         st.title(f'Welcome *{st.session_state["name"]}*')
+        st.subheader('Click on the Chat to upload document and access AI chatbot')
         with st.sidebar:
                authenticator.logout("Logout", "sidebar")
     elif st.session_state["authentication_status"] is False:
