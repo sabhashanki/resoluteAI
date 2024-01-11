@@ -4,10 +4,11 @@ from langchain_openai.llms.base import OpenAI
 import streamlit as st
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS, Chroma, Qdrant
-from utils import translate_text, add_company_logo, lang_select
+from utils import translate_text, add_company_logo, lang_select, extract_data, extract_pdf, process_text
 import time
 import configparser
-
+st.set_page_config(layout = 'wide')
+st.title('Chat with PDF')
 # Initialization
 config = configparser.ConfigParser()
 config.read('./config.ini') 
@@ -23,6 +24,51 @@ if vec_db_name == 'CHROMA':
 chain = load_qa_chain(llm, chain_type='stuff')
 add_company_logo()
 
+with st.sidebar:
+    doc_type = st.selectbox('Select document type', (
+                'None',
+                'pdf', 
+                'txt',
+                'rst',
+                'md',
+                )
+            )
+    file_folder = st.file_uploader("Upload your PDF Document",type=['pdf','txt','md','rst'],accept_multiple_files=True)           
+    process_button=st.button("Proceed")
+    if process_button:
+        if doc_type == 'pdf':
+            raw_text = extract_pdf(file_folder)
+            process_text(raw_text) 
+            # st.write(raw_text)
+        else:
+            raw_text = extract_data(file_folder)
+            process_text(raw_text) 
+            # st.write(raw_text)
+
+    user_lang =st.selectbox('Select Language', (
+        'English', 
+        'Tamil', 
+        'Hindi', 
+        'Malayalam',
+        'Kannada',
+        'Telugu',
+        'Marathi', 
+        'Assamese', 
+        'Bengali', 
+        'Gujarati',
+        'Konkani',
+        'Oriya',
+        'Punjabi',
+        'Sanskrit',
+        'Urdu',
+        'Chinese(simplified)',
+        'French',
+        'Korean',
+        'Japanese',
+        'Portuguese',
+        'Italian',
+        'Russian'
+        ))
 
 # Generate OpenAI Embeddings and indexing vector DB
 def query_answer(query):
@@ -36,31 +82,6 @@ def query_answer(query):
     response = chain.run(input_documents=docs, question=query)
     return response
         
-user_lang =st.selectbox('Select Language', (
-    'English', 
-    'Tamil', 
-    'Hindi', 
-    'Malayalam',
-    'Kannada',
-    'Telugu',
-    'Marathi', 
-    'Assamese', 
-    'Bengali', 
-    'Gujarati',
-    'Konkani',
-    'Oriya',
-    'Punjabi',
-    'Sanskrit',
-    'Urdu',
-    'Chinese(simplified)',
-    'French',
-    'Korean',
-    'Japanese',
-    'Portuguese',
-    'Italian',
-    'Russian'
-    ))
-
 def chatbox(target):
     if not st.session_state["authentication_status"]:
         st.subheader('Login and upload PDFs to access the chat module')

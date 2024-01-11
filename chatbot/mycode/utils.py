@@ -21,9 +21,29 @@ def extract_pdf(pdf_folder):
         pdf_reader = PdfReader(pdf)
         for page in pdf_reader.pages:
             text += page.extract_text()
-        st.success(f'Extracted : {pdf.name}', icon="✅")
+        # st.success(f'Extracted : {pdf.name}', icon="✅")
     return text
 
+def extract_data(folder):
+    text = ""
+    for txt in folder:
+        for line in txt:
+            text += str(line, encoding = 'utf-8')
+    return text
+
+# def extract_md(md_folder):
+#     text = ''
+#     for md_file in md_folder:
+#         for line in md_file:
+#             text += str(line, encoding = 'utf-8')
+#     return text
+
+# def extract_rst(rst_folder):
+#     text = ''
+#     for rst_file in rst_folder:
+#         for line in rst_file:
+#             text += str(line, encoding = 'utf-8')
+#     return text
 
 def process_text(text):
     # Split the text into chunks using Langchain's CharacterTextSplitter
@@ -40,12 +60,12 @@ def process_text(text):
     vec_db_name = config['VECTOR_DB']['MODEL_NAME']
 
     if vec_db_name == 'FAISS':
-        st.info('Creating OpenAI embeddings with FAISS.... Please wait', icon="ℹ️")
+        # st.info('Creating OpenAI embeddings with FAISS.... Please wait', icon="ℹ️")
         vector_db = FAISS.from_texts(chunks, embeddings)
         vector_db.save_local("faiss_index")
 
     if vec_db_name == 'CHROMA':
-        st.info('Creating OpenAI embeddings with CHROMA.... Please wait', icon="ℹ️")
+        # st.info('Creating OpenAI embeddings with CHROMA.... Please wait', icon="ℹ️")
         vector_db = Chroma.from_texts(chunks, embeddings, persist_directory = "chroma_index")
 
 
@@ -53,7 +73,7 @@ def process_text(text):
     #     st.info('Creating OpenAI embeddings with QDRANT.... Please wait', icon="ℹ️")
     #     vector_db = Qdrant.from_texts(embeddings, path="qdrant_index", collection_name="my_documents")
 
-    st.success('Embeddings generated... Click on the chat button to start the conversations', icon="✅")
+    st.success('Embeddings generated... Start the conversations', icon="✅")
 
 
 def translate_text(text, source='auto', target='hi'):
