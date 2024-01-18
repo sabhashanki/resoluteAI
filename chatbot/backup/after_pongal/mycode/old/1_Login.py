@@ -2,11 +2,11 @@ import yaml
 import streamlit as st
 import streamlit_authenticator as stauth
 from yaml.loader import SafeLoader
-from utils import add_company_logo
+from utils import add_company_logo, extract_pdf, process_text, hide_bar
+from st_pages import Page, show_pages, add_indentation
 from dotenv import load_dotenv
-st.set_page_config(page_title='Login')
-import os
 
+st.set_page_config(page_title='Login')
 def main():
     load_dotenv()
     add_company_logo()
@@ -25,15 +25,24 @@ def main():
 
     if st.session_state["authentication_status"]:
         st.title(f'Welcome *{st.session_state["name"]}*')
-        st.subheader('Click on the Chat to upload document and access AI chatbot')
         with st.sidebar:
-               authenticator.logout("Logout", "sidebar")
+            authenticator.logout("Logout", "sidebar")
+        with st.container():
+            pdf_folder = st.file_uploader("Upload your PDF Document",type="pdf",accept_multiple_files=True)
+            # show_pages([Page("Home.py", "Home"),Page("settings.py", "Settings", "⚙️"), Page("chat.py", in_section=False, icon="📝"),])
+            add_indentation()            
+
+        process_button=st.button("Proceed")
+        if process_button:
+            raw_text = extract_pdf(pdf_folder)
+            process_text(raw_text)    
+       
+
     elif st.session_state["authentication_status"] is False:
         st.error('Username/password is incorrect')
 
     elif st.session_state["authentication_status"] is None:
         st.warning('Please enter your username and password')
-
 
 if __name__ == '__main__':
     main()

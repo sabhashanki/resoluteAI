@@ -5,7 +5,6 @@ from yaml.loader import SafeLoader
 from utils import add_company_logo
 from dotenv import load_dotenv
 st.set_page_config(page_title='Login')
-import os
 
 def main():
     load_dotenv()
@@ -33,7 +32,6 @@ def main():
 
     elif st.session_state["authentication_status"] is None:
         st.warning('Please enter your username and password')
-
 
 if __name__ == '__main__':
     main()

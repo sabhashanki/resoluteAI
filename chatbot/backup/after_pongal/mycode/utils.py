@@ -6,7 +6,6 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS, Chroma, Qdrant
 from deep_translator import GoogleTranslator
 import pickle
-import os
 import streamlit_authenticator as stauth
 from pathlib import Path
 import configparser
@@ -16,41 +15,24 @@ config = configparser.ConfigParser()
 config.read('./config.ini') 
 
 
-def extract_pdf(pdf_folder, user_folder):
+def extract_pdf(pdf_folder):
     text = ""
     for pdf in pdf_folder:
         pdf_reader = PdfReader(pdf)
         for page in pdf_reader.pages:
             text += page.extract_text()
-    parent_dir = os.getcwd()
-    path = os.path.join(parent_dir, user_folder)
-    if not os.path.exists(path):
-        os.mkdir(path)
-    file = open(path + '/' + 'raw_text.txt' , 'w')
-    file.write(text)
         # st.success(f'Extracted : {pdf.name}', icon="✅")
     return text
 
-
-def extract_data(folder, user_folder):
+def extract_data(folder):
     text = ""
     for txt in folder:
         for line in txt:
             text += str(line, encoding = 'utf-8')
-    parent_dir = os.getcwd()
-    path = os.path.join(parent_dir, user_folder)
-    if not os.path.exists(path):
-        os.mkdir(path)
-    file = open(path + '/' + 'raw_text.txt' , 'w')
-    file.write(text)
     return text
 
 
-def process_text(text, user_folder):
-    parent_dir = os.getcwd()
-    path = os.path.join(parent_dir, user_folder)
-    if not os.path.exists(path):
-        os.mkdir(path)
+def process_text(text):
     # Split the text into chunks using Langchain's CharacterTextSplitter
     text_splitter = CharacterTextSplitter(
         separator="\n",
@@ -67,11 +49,11 @@ def process_text(text, user_folder):
     if vec_db_name == 'FAISS':
         st.info('Creating OpenAI embeddings with FAISS.... Please wait', icon="ℹ️")
         vector_db = FAISS.from_texts(chunks, embeddings)
-        vector_db.save_local(f"{path}/embeddings/faiss_index")
+        vector_db.save_local("faiss_index")
 
     if vec_db_name == 'CHROMA':
         st.info('Creating OpenAI embeddings with CHROMA.... Please wait', icon="ℹ️")
-        vector_db = Chroma.from_texts(chunks, embeddings, persist_directory = f"{path}/embeddings/chrome_index")
+        vector_db = Chroma.from_texts(chunks, embeddings, persist_directory = "chroma_index")
 
 
     # if vec_db_name == 'QDRANT':

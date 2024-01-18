@@ -1,2 +1,5 @@
 ./chatbot/mycode/qdrant_index
 ./chatbot/mycode/faiss_index
+chatbot/mycode/.env
+chatbot/mycode/faiss_index/index.pkl
+chatbot/mycode/faiss_index/index.faiss
