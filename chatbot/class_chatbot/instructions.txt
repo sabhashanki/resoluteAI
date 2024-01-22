@@ -1,0 +1,7 @@
+Run the command to install all dependencies
+
+
+pip install langchain langchain-community openai faiss-cpu streamlit streamlit_authenticator PyYAML st_pages deep_translator pathlib configparser PyPDF2 pickle4 langchain_openai python-dotenv streamlit_extras chromadb
+
+
+create .env file and configure OpenAI api key

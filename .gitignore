@@ -3,3 +3,7 @@
 chatbot/mycode/.env
 chatbot/mycode/faiss_index/index.pkl
 chatbot/mycode/faiss_index/index.faiss
+.env 
+chatbot/backup/mark3_redesigned/mycode/.env
+chatbot/class_chatbot/.env
+chatbot/mycode/.env

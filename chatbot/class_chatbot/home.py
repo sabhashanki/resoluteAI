@@ -173,14 +173,18 @@ def process_text(text, path):
     vec_db_name = config['VECTOR_DB']['MODEL_NAME']
 
     if vec_db_name == 'FAISS':
-        st.info('Creating OpenAI embeddings with FAISS.... Please wait', icon="ℹ️")
-        vector_db = FAISS.from_texts(chunks, embeddings)
-        vector_db.save_local(f"{path}/faiss_index")
+        try:
+            st.info('Creating OpenAI embeddings with FAISS.... Please wait', icon="ℹ️")
+            vector_db = FAISS.from_texts(chunks, embeddings)
+            vector_db.save_local(f"{path}/faiss_index")
+            st.success('Embeddings generated... Start the conversations', icon="✅")
+        except Exception as e:
+            st.error(f'Failed to create embeddings : {e}')
 
     if vec_db_name == 'CHROMA':
         st.info('Creating OpenAI embeddings with CHROMA.... Please wait', icon="ℹ️")
         vector_db = Chroma.from_texts(chunks, embeddings, persist_directory = f"{path}/chrome_index")
-    st.success('Embeddings generated... Start the conversations', icon="✅")
+        st.success('Embeddings generated... Start the conversations', icon="✅")
 
 
 def translate_text(text, source='auto', target='hi'):
@@ -303,11 +307,14 @@ def chatpage():
                 else:
                     raw_text = extract_data(file_folder, text_path)
                     process_text(raw_text, embedding_path)
-            if vec_db_name == 'FAISS':
-                vector_db = FAISS.load_local(f'{embedding_path}/faiss_index', embeddings)
-            if vec_db_name == 'CHROMA':
-                vector_db = Chroma(persist_directory = f'{embedding_path}/chrome_index',
-                embedding_function = embeddings )
+            try:
+                if vec_db_name == 'FAISS':
+                    vector_db = FAISS.load_local(f'{embedding_path}/faiss_index', embeddings)
+                if vec_db_name == 'CHROMA':
+                    vector_db = Chroma(persist_directory = f'{embedding_path}/chrome_index',
+                    embedding_function = embeddings )
+            except:
+                st.error('Create Embeddings to access the vector stores!!!')
                 
         else:
             st.subheader('Login and upload PDFs to access the chat module')

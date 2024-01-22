@@ -1,0 +1,45 @@
+SHANKESH RAJU MS Chennai, India  |  +919444941332  |  shankeshraju@gmail.com  |  https://github.com/sabhashanki  |  https://linkedin.com/in/shankeshrajums  |  https://huggingface.co/sabhashanki
+EXPERIENCE ResoluteAI Software  Data Science Intern - Generative AI (December 2023 – Till Present) Roles and Responsibilities •Designing, developing, and implementing generative AI models and algorithms utilising state-of-the-art techniques such as Generative Pre-Trained Transformers (GPT), Variational auto encoder, and Generative adversarial networks (GAN), data ingestion, preprocessing, search and retrieval, Retrieval Augmented Generation (RAG), and prompt engineering
+•Research to stay up-to-date with the latest advancements in generative AI, machine learning, and deep learning techniques and identify opportunities to integrate them into our products and services.
+•Optimising existing generative AI models for improved performance, scalability, and eﬃciency
+•Developing and maintaining AI pipelines, including data preprocessing, feature extraction, model training, and evaluation
+Project Description •Document Chatbot - To develop a chatbot that provides us information from the document in 21 languages. Implemented using Langchain with OpenAI for text embeddings, vector databases like FAISS, CHROME and PINECONE for indexing and Streamlit for deployment
+•Chat2VIS - To develop a chatbot that reads CSV ﬁles and create Matplotlib visualisations using OpenAI code completion model and Langchain pandas agent
+•Application Tracking System - Developed ATS checker using Google Gemini Pro GPT model
+Achievements •Collaborated with ML open source community in developing AI/ML projects - Krish Naik - ML Open Source Projects (Pull Request #137)
+Environment •Streamlit (1.24.0), Pandas (2.1.4), OpenAI (1.7.1), Matplotlib (3.8.2), Langchain (0.1.0), Deep Translator (1.11.4), BeautifulSoup4 (4.12.2), ChromaDB (0.4.22), FAISS_CPU (1.7.4), Huggingface_Hub (0.20.2), PyPDF2 (3.0.1)
+iNeuron.ai Machine Learning Intern (August 2023 – November 2023) Roles and Responsibilities •Develop and implement Machine Learning and Deep Learning models, manage data pipelines for training and evaluation through statistical analysis and error estimation
+•Building and modifying(ﬁne-tuning) pre-trained enterprise-grade large language models(LLM) and multi-modal models, and developing algorithms for image preprocessing in Computer Vision projects
+•Participated in the entire software development lifecycle, collaborating with cross-functional teams for  building, integrating, testing, and delivering high-quality solutions
+•Research new AI models and trends to understand how we can maximise the usage of our existing models and/or whether we should adopt new models
+•Contribution to open-source AI projects and ML community
+Project Description •License plate Detection - To build a solution that should recognise vehicle numbers with uttermost clarity in any circumstance. With varying distances and colour combinations, it should work for any Indian vehicle
+•Image Captioning - To develop a deep learning model to generate a textual description of an image. It uses both Natural Language Processing and Computer Vision techniques to generate the captions
+Achievements •Collaborated with ML open source community in developing AI/ML projects - Krish Naik - ML Open Source Projects (Pull Request #26)
+Environment •Yolo V8, LTSM, Django (4.1), U2NET, FastAPI (0.104.0), Docker (6.0.1), Pandas (1.5.1), EasyOCR (1.6.1), OpenCV (4.7.0.68)
+Indian Institute of Technology, Bombay  ML Development and Research Intern (Sept 2022 – June 2023) Roles and Responsibilities •Design and validation of novel AI (deep learning)  methodologies, algorithms, and techniques for solving complex challenges in image recognition
+•Analyse datasets to identify patterns, trends, and insights that can improve the learning, generalisability, and robustness of AI models. 
+•Training ﬁnal models, including techniques such as transfer learning, data augmentation, etc. to optimise models for use in a production environment
+•Continuously optimise and improve the image processing pipeline for speed, accuracy, and eﬃciency
+Project Description •Khul Ke social media platform - Twitter-like social media platform incorporated with AI modules such as topic classiﬁcation, keyword generation, and hashtag generation based on the romanised Indian short text. Topic classiﬁcation uses RoBERTa LLM ﬁne-tuned for 14 custom topics. KeyBERT LLM and Spacy to  extract Noun and Named-entity recognition(NER) keywords, and OpenAI API for the hashtag generation
+•Social Security number masking - Develop a deep learning model to detect and mask unique social security numbers for privacy concerns. We need to classify the document containing the social security number across the pile, identify the reading direction, and mask the ﬁrst eight digits
+Achievements •Improved large language models(LLM) performance by 19% in topic classiﬁcation
+•Improved text masking accuracy by developing algorithm to ﬁnd the reading direction in all orientations
+Environment •YOLO V8 (Repository), Python (3.10), FastAPI (0.104.0), KeyBERT (Repository), RoBERTa (Repository), Spacy (3.5.0),  NLTK (3.8), Document Image Transformer (Repository), Docker (6.0.1), Pandas (1.5.1), EasyOCR (1.6.1),  OpenCV (4.7.0.68), Selenium (4.5.0), PyTesseract (0.3.10), Selenium
+Union Public Service Commission Student (January 2017 – March 2022) •Preparing for UPSC examination - Cleared Prelims and appeared in Mains Twice
+Wipro Limited  System Administrator (April 2014 – Jan 2017) Roles and Responsibilities  
+•Design and implement large-scale Windows Server, VMware, and Citrix environments.
+•VMware management : Creation of Virtual Machine, VM migration, VM motion, management of VSphere and ESXI Server
+•Develop automation scripts to streamline system administration tasks, high level diagnostics & troubleshooting of VMware ESX hosts and VMware products
+•Handled high-priority issues with direct customer interaction and prepared Root Cause Analysis (RCA) report 
+•Experience in performance tuning of VMware servers and Virtual sessions and management of servers resources between virtual machines
+•Coordinating with vendors(HP , Hitachi, Dell, Cisco, Veritas) for hardware failure and replacement, and ensuring that assigned infrastructure at the client site is conﬁgured, installed, tested, and operational
+Project Description •Takeda Pharmaceuticals - Well known Japanese Pharmaceutical company based out of Germany having more than 400+ ESX servers and 3000+ VMware virtual servers across 70+ countries primarily used for medicine manufacturing and research.
+Achievements •Transitioned 300+ servers across multiple regions(Japan, Germany, USA, UK, Australia) with minimum downtime 
+•Migrated 40+ virtual machine to backup ESX host in business hours due to unexpected host failure with minimum downtime
+Environment •Veritas NetBackup (7.7.1), HP Data Protector (9.0), Oracle (11G), Unix RHEL (7.1), Windows Server (2012R2 and 2016), VMware Workstation Pro (11.1)
+TECHNICAL SKILLS Languages - Python (Proﬁcient), C++ (Familiar)
+Web Frameworks/APIs -> Django, Flask, FastAPI, Streamlit
+ML Frameworks - NumPy, Pandas, Matplotlib, Seaborn, Scikit-Learn, PyTorch, OpenCV, TensorFlow, Keras, Langchain, Heroku, Amazon Web Services (AWS)
+Hard Skills -  Data structures, Deep Learning (Intermediate), Predictive Modelling, Computer Vision (Intermediate), Natural Language Processing (Intermediate), Hyper-Tuning, Statistical Modelling, Data Visualisation ,Data Modelling and Evaluation, Problem Solving, Data Visualization, Software Development Life Cycle, Computer Vision, Natural Language Processing, AGILE, Retrieval Augmented Generation (RAG), Prompt engineering, Machine Learning, Data Science
+EDUCATION/CERTIFICATION Bachelor of Engineering, Computer Science, Anna University (2013) IBM Machine Learning Professional Certiﬁcate (May - Sept 2022)
