@@ -1,217 +1,228 @@
-MUTUALNON-DISCLOSUREAGREEMENT
-THISMUTUALNON-DISCLOSUREAGREEMENT(the“Agreement”)ismadeonthis____dayof
-_______byandbetween:
-__________________________________________________________,acompanyincorporated
-undertheCompaniesAct,1956,andhavingitsregisteredofficeat
-_______________________________,hereinafterreferredtoasthe“_______”orthe“Company”
-(whichexpressionshallunlessrepugnanttothecontextormeaningthereofbedeemedtomeanand
-includeitssuccessor/sinbusinessandpermittedassign/s)oftheONEPART
+MUTUAL NON-DISCLOSURE AGREEMENT
+THIS MUTUAL NON-DISCLOSURE AGREEMENT (the “Agreement”) is made on this ____ day of
+_______ by and between:
+__________________________________________________________, a company incorporated
+under
+the
+Companies
+Act,
+1956,
+and
+having
+its
+registered
+office
+at
+_______________________________, hereinafter referred to as the “_______” or the “Company”
+(which expression shall unless repugnant to the context or meaning thereof be deemed to mean and
+include its successor /s in business and permitted assign/s) of the ONE PART
 AND
-ResoluteAISoftwarePrivateLimited,acompanyregisteredunderthelawsofCompaniesAct,2013,
-withitsregisteredofficeat
-91
-Springboard,
-#175
-&
-176,
-Dollars
-Colony,
-Phase
-4,
-JP
-Nagar,
-Bannerghatta
-Main
-Road,
-Bangalore
-560076
-India,hereinafterreferredtoasthe“ResoluteAI
-SoftwareorRAISW”(whichexpressionshallunlessrepugnanttothecontextormeaningthereofbe
-deemedtomeanandincludeitssuccessor/sinbusinessandpermittedassign/s)oftheOTHERPART;
-CompanyandResoluteAISoftwareshallbeindividuallyreferredtoas“Party”andcollectivelyas
+Resolute AI Software Private Limited, a company registered under the laws of Companies Act, 2013,
+with its registered office at 91 Springboard, #175 & 176, Dollars Colony, Phase 4, JP Nagar,
+Bannerghatta Main Road, Bangalore 560076 India, hereinafter referred to as the “ResoluteAI
+Software or RAISW” (which expression shall unless repugnant to the context or meaning thereof be
+deemed to mean and include its successor /s in business and permitted assign/s) of the OTHER PART;
+Company and ResoluteAI Software shall be individually referred to as “Party” and collectively as
 “Parties”.
 WHEREAS:
-a)TheCompanyisinthebusinessofthe__________________________________________
-b)ResoluteAISoftwareisinthebusinessoftheAISoftwareProductsLicensing/Subscription,AI
-&DigitalEngineeringServicesandCustomizedSolutionsandAIProfessionalServicesthat
-includesAITalentTraining,AITalentDeploymentandBuildingCentreofExcellence.
-c)TheCompanyintendstoavailcertainservicesrelatingtoAISoftwareProducts
-Licensing/Subscription,AI&DigitalEngineeringServices&CustomizedSolutionsandAI
-ProfessionalServices.ResoluteAISoftwareisdesirousofrenderingsuchservicesatthe
-requestoftheCompany(hereinaftertobereferredtoasthe“Purpose”).
-Page1of7d)InthecourseofworkingtowardsthePurpose,itisanticipatedthatthePartiesmaydisclose
-ordelivercertainConfidentialInformation(asdefinedbelow)toeachother.TheParties
-agreethatthereisaneedforthisAgreementinordertoassuretheconfidentialityand
-properuseofsuchConfidentialInformation.
-NOWTHISAGREEMENTWITNESSETHANDITISHEREBYAGREED,UNDERSTOOD,CONFIRMEDAND
-DECLAREDBYANDBETWEENTHEPARTIESHERETOASFOLLOWS:-
-1.CONFIDENTIALINFORMATION:
-1.1ThetermConfidentialInformation”meansallinformationdisclosedbyoneParty(“Disclosing
-Party”)totheotherParty(“ReceivingParty”)(eitherorallyorinanyothertangibleform),
-including,butnotlimitedto,intellectualproperty,patents,copyrights,trademarks,trade
-secrets,inventions,discoveries,processes,methodsofdoingbusiness,andknow-how;
-analyses,computersoftwarecode,designs,routines,algorithms,architectures,andstructures;
-productinformation;researchanddevelopmentinformation;informationrelatingtoactual
-andpotentialcustomers;financialdataandinformation;businessplans;marketingmaterials
-andstrategies;passwordsandaccesscodes;andanyotherinformationregardingtheforegoing
-thatisdisclosedtoReceivingPartyandfurtherincludesthefactthatthePartiesaredisclosing
-informationtoeachotherforthepurposeofexploringapotentialbusiness(orother)
-relationship.FailuretoincludeaconfidentialitynoticeonanymaterialsdisclosedtoReceiving
-Partydoesnotgiverisetoaninferencethattheinformationdisclosedisnotconfidential.
-1.2ConfidentialInformationdoesnotincludeanyinformationthatReceivingPartycanestablish
-(a)wasgeneratedindependentlybytheReceivingPartypriortothetimeofdisclosure,(b)isat
-thetimeofthedisclosureorthereafterbecomeswithinthepublicdomainotherthanbyanact
-ordefaultoftheReceivingParty,(c)issubsequentlyobtainedfromathirdpartywithoutany
-obligationofconfidentialityontheReceivingorDisclosingParty.
-2.PROTECTIONANDUSEOFCONFIDENTIALINFORMATION:
-2.1LimitedUse:TheReceivingPartyacknowledgesandagreesthattherelationshipwithrespect
-toConfidentialInformationshallbefiduciaryinnature.TheReceivingPartyagreestousethe
-ConfidentialInformationonlyforthelimitedtimespecifiedhereinandsolelyforthepurpose
-ofperformingitsdutiestowardsthecompletionofthePurpose.
-Page2of72.2Protection:TheReceivingPartyshallusethesamecareanddiscretiontolimitdisclosureof
-suchConfidentialInformationasituseswithitsowninformationwhichitdesirestoprotect
-againstunauthorizedorunrestricteddisclosureand/oragainstcompetitiveuse,including
-takingstepsto:
-a.notdisclosesuchtoanythirdparty;
-b.restrictdisclosureofConfidentialInformationsolelytothoseofitsemployeeswitha
-needtoknow;
-c.usetheConfidentialInformationprovidedhereunderonlyforthelimitedusedescribed
-inSection2.1.
-d.ReturnorpermanentlydestroyallConfidentialInformation(includingcopies)received
-hereunderuponrequestoftheDisclosingParty(exceptforcopiesexistinginroutine
-electronicbackupsystems,whichshallremainsubjecttotheconfidentialityobligations
-createdbythisAgreement),andshalluponrequestcertifysuchdestruction.
-2.3TheforegoingshallnotlimittheabilityoftheReceivingPartytodisclosesuchConfidential
-Informationifsuchdisclosureis(a)requiredtobemadepursuanttoanylaworregulation,
-governmentauthority,dulyauthorizedsubpoenaorcourtorder,whereuponthatpartyshall
-providepromptnoticetotheDisclosingPartyoftheConfidentialInformationinquestion,who
-willthereofhavetheopportunitytorespondpriortosuchdisclosure;(b)requiredtobemade
-byacourtorothertribunalinconnectionwiththeenforcementofDisclosingParty’srights
-underthisAgreement,or(c)isapprovedbythepriorwrittenconsentoftheDisclosingPartyof
-theConfidentialInformation.
-2.4Affiliates,AdvisorsandEmployeesofReceivingParty:Eachpartyagreesthattheobligations
-containedinthisAgreementshallextendtotheaffiliatedcompaniesofeachpartyandtoallits
-advisors,consultantsandemployees.Inthisrespecteachpartyshallensurethatan
-agreementtokeepsuchinformationconfidential,ontermssimilartothisAgreement,isin
-placebeforedisclosinganyConfidentialInformationtosuchaffiliate,advisor,consultantor
-employee.UndernocircumstancesshallapartydiscloseConfidentialInformationofthe
-DisclosingPartytoanyadvisororconsultantthatprovidesproductsorservicesthatcompete
-Page3of7withproductsorservicesprovidedbytheDisclosingParty,withoutpriorwrittenconsentfrom
-theReceivingParty.
-2.5NoLicenseorWarranty:NeitherexecutionofthisAgreement,norexchangingConfidential
-Informationhereundershallbeconstrued,directlyorbyimplication,as(i)effectingany
-transferofownershipinsuchConfidentialInformation;(ii)grantinganylicenserightstoany
-intellectualpropertyrightrecognizedinanycountry;(iii)grantingtherighttouseeitherParty’s
-name,tradenames,trademarks,servicemarks,logosordesignsforanypurposewithoutsuch
-Party’spriorwrittenpermission;or(iv)creatinganyemployment,agency,partnership,teaming
-arrangement,jointventure,orotherbusinessrelationshipbetweentheParties.Nothinginthis
-AgreementshallobligateaPartytomakedisclosuresofConfidentialInformation,enterinto
-anysubsequentcommercialagreement,orlimittherightofeitherPartytoenterinto
-agreementsforpurposessimilartotheBusinessPurposewithanythirdparty.ALL
-CONFIDENTIALINFORMATIONISPROVIDED"ASIS"ANDDISCLOSINGPARTYMAKESNO
-WARRANTIES,EXPRESS,IMPLIEDOROTHERWISE,REGARDINGITSACCURACY,COMPLETENESS
-ORPERFORMANCE.TheReceivingPartyacknowledgesandagreesthatbyvirtueofthis
-Agreement,ithasnotacquired,doesnotandwillnotacquireatanytimehereafteranyright,
-titleorinterestofanynaturewhatsoeverintheConfidentialInformation,andagreesand
-undertakesthatitwillnotatanytimetakeadvantageofanylegalpossibilitytoacquirerights
-ofitsownintheConfidentialInformation,oranyvariationthereofcapableofcausing
-deceptionorconfusion,andherebyunconditionallyrenouncesallsuchright(s),ifany
-2.6Representation&Warranties:EachPartyherebyrepresentsandwarrantstotheotherthatthe
-execution,deliveryandperformanceofthisAgreementdoesnotandshallnotconflictwith,
-breach,violateorcauseadefaultunderanycontract,agreement,instrument,order,judgment
-ordecreetowhichitisapartyorbywhichitisbound.DisclosingPartyretainstherightto
-determine,initssolediscretion,whatinformation,properties,andpersonnelitwishestomake
-availabletotheReceivingParty,andtheDisclosingPartymakesnorepresentationorwarranty,
-expressorimplied,concerningthecompletenessoraccuracyoftheConfidentialInformation.
-2.7TermofAgreement:ThisAgreementshallbevalidforaperiodofone(1)yearfromthedateof
-lastdisclosureoftheConfidentialInformationunderthisAgreement,subjecttoeachparty's
-obligationsofconfidentialitywithrespecttoConfidentialInformationreceivedfromtheother
-partyduringthetermofthisAgreementshallsurvivetheterminationorexpirationofthis
+a)The Company is in the business of the __________________________________________
+b)ResoluteAI Software is in the business of the AI Software Products Licensing/Subscription, AI
+& Digital Engineering Services and Customized Solutions and AI Professional Services that
+includes AI Talent Training, AI Talent Deployment and Building Centre of Excellence.
+c)
+The Company intends to avail certain services relating to AI Software Products
+Licensing/Subscription, AI & Digital Engineering Services & Customized Solutions and AI
+Professional Services. ResoluteAI Software is desirous of rendering such services at the
+request of the Company (hereinafter to be referred to as the “Purpose”).
+Page 1 of 7d)
+In the course of working towards the Purpose, it is anticipated that the Parties may disclose
+or deliver certain Confidential Information (as defined below) to each other. The Parties
+agree that there is a need for this Agreement in order to assure the confidentiality and
+proper use of such Confidential Information.
+NOW THIS AGREEMENT WITNESSETH AND IT IS HEREBY AGREED, UNDERSTOOD, CONFIRMED AND
+DECLARED BY AND BETWEEN THE PARTIES HERETO AS FOLLOWS: -
+1.CONFIDENTIAL INFORMATION:
+1.1The term Confidential Information” means all information disclosed by one Party (“Disclosing
+Party”) to the other Party (“Receiving Party”) (either orally or in any other tangible form),
+including, but not limited to, intellectual property, patents, copyrights, trademarks, trade
+secrets, inventions, discoveries, processes, methods of doing business, and know-how;
+analyses, computer software code, designs, routines, algorithms, architectures, and structures;
+product information; research and development information; information relating to actual
+and potential customers; financial data and information; business plans; marketing materials
+and strategies; passwords and access codes; and any other information regarding the foregoing
+that is disclosed to Receiving Party and further includes the fact that the Parties are disclosing
+information to each other for the purpose of exploring a potential business (or other)
+relationship. Failure to include a confidentiality notice on any materials disclosed to Receiving
+Party does not give rise to an inference that the information disclosed is not confidential.
+1.2
+Confidential Information does not include any information that Receiving Party can establish
+(a) was generated independently by the Receiving Party prior to the time of disclosure, (b) is at
+the time of the disclosure or thereafter becomes within the public domain other than by an act
+or default of the Receiving Party, (c) is subsequently obtained from a third party without any
+obligation of confidentiality on the Receiving or Disclosing Party.
+2.PROTECTION AND USE OF CONFIDENTIAL INFORMATION:
+2.1Limited Use: The Receiving Party acknowledges and agrees that the relationship with respect
+to Confidential Information shall be fiduciary in nature. The Receiving Party agrees to use the
+Confidential Information only for the limited time specified herein and solely for the purpose
+of performing its duties towards the completion of the Purpose.
+Page 2 of 72.2
+Protection: The Receiving Party shall use the same care and discretion to limit disclosure of
+such Confidential Information as it uses with its own information which it desires to protect
+against unauthorized or unrestricted disclosure and/or against competitive use, including
+taking steps to:
+a.not disclose such to any third party;
+b.restrict disclosure of Confidential Information solely to those of its employees with a
+need to know;
+c.
+use the Confidential Information provided hereunder only for the limited use described
+in Section 2.1.
+d.
+Return or permanently destroy all Confidential Information (including copies) received
+hereunder upon request of the Disclosing Party (except for copies existing in routine
+electronic backup systems, which shall remain subject to the confidentiality obligations
+created by this Agreement), and shall upon request certify such destruction.
+2.3
+The foregoing shall not limit the ability of the Receiving Party to disclose such Confidential
+Information if such disclosure is (a) required to be made pursuant to any law or regulation,
+government authority, duly authorized subpoena or court order, whereupon that party shall
+provide prompt notice to the Disclosing Party of the Confidential Information in question, who
+will thereof have the opportunity to respond prior to such disclosure; (b) required to be made
+by a court or other tribunal in connection with the enforcement of Disclosing Party’s rights
+under this Agreement, or (c) is approved by the prior written consent of the Disclosing Party of
+the Confidential Information.
+2.4
+Affiliates, Advisors and Employees of Receiving Party: Each party agrees that the obligations
+contained in this Agreement shall extend to the affiliated companies of each party and to all its
+advisors, consultants and employees.
+In this respect each party shall ensure that an
+agreement to keep such information confidential, on terms similar to this Agreement, is in
+place before disclosing any Confidential Information to such affiliate, advisor, consultant or
+employee. Under no circumstances shall a party disclose Confidential Information of the
+Disclosing Party to any advisor or consultant that provides products or services that compete
+Page 3 of 7with products or services provided by the Disclosing Party, without prior written consent from
+the Receiving Party.
+2.5
+No License or Warranty: Neither execution of this Agreement, nor exchanging Confidential
+Information hereunder shall be construed, directly or by implication, as (i) effecting any
+transfer of ownership in such Confidential Information; (ii) granting any license rights to any
+intellectual property right recognized in any country; (iii) granting the right to use either Party’s
+name, trade names, trademarks, service marks, logos or designs for any purpose without such
+Party’s prior written permission; or (iv) creating any employment, agency, partnership, teaming
+arrangement, joint venture, or other business relationship between the Parties. Nothing in this
+Agreement shall obligate a Party to make disclosures of Confidential Information, enter into
+any subsequent commercial agreement, or limit the right of either Party to enter into
+agreements for purposes similar to the Business Purpose with any third party.
+ALL
+CONFIDENTIAL INFORMATION IS PROVIDED "AS IS" AND DISCLOSING PARTY MAKES NO
+WARRANTIES, EXPRESS, IMPLIED OR OTHERWISE, REGARDING ITS ACCURACY, COMPLETENESS
+OR PERFORMANCE. The Receiving Party acknowledges and agrees that by virtue of this
+Agreement, it has not acquired, does not and will not acquire at any time hereafter any right,
+title or interest of any nature whatsoever in the Confidential Information, and agrees and
+undertakes that it will not at any time take advantage of any legal possibility to acquire rights
+of its own in the Confidential Information, or any variation thereof capable of causing
+deception or confusion, and hereby unconditionally renounces all such right(s), if any
+2.6
+Representation & Warranties: Each Party hereby represents and warrants to the other that the
+execution, delivery and performance of this Agreement does not and shall not conflict with,
+breach, violate or cause a default under any contract, agreement, instrument, order, judgment
+or decree to which it is a party or by which it is bound. Disclosing Party retains the right to
+determine, in its sole discretion, what information, properties, and personnel it wishes to make
+available to the Receiving Party, and the Disclosing Party makes no representation or warranty,
+express or implied, concerning the completeness or accuracy of the Confidential Information.
+2.7
+Term of Agreement: This Agreement shall be valid for a period of one (1) year from the date of
+last disclosure of the Confidential Information under this Agreement, subject to each party's
+obligations of confidentiality with respect to Confidential Information received from the other
+party during the term of this Agreement shall survive the termination or expiration of this
 Agreement.
-Page4of72.8TerminationoftheAgreement:EitherPartymayterminatethisAgreementwiththirty(30)
-dayspriorwrittennotice.EitherPartymayterminatethisAgreementwithinfifteen(15)days
-writtennoticeincaseofanymaterialbreachbytheotherParty.Uponterminationofthis
-AgreementorupontherequestofDisclosingParty,whicheveroccursfirst,theReceivingParty
-shalleitherdelivertoDisclosingParty,ordestroy/erase,allrecordsofwhatevernatureinthe
-ReceivingParty’spossession,custodyorcontrol,whichcontainanyConfidentialInformationor
-whichwerereceivedbytheReceivingPartyfromtheDisclosingParty.However,totheextent
-theaforesaidrecordsformpartofpermanentrecordsoftheReceivingParty,andtheReceiving
-Partyisboundbylaworregulatoryrequirementtopreservesuch,theReceivingPartymay
-maintaincopiesoftherecordsprovideditgivestheDisclosingPartywrittennoticethereof.In
-theeventtheReceivingPartyretainspossessionorcontrolovertheDisclosingParty’s
-ConfidentialInformationfollowingthetermofthisAgreement,theprovisionsofthis
-Agreementshall,notwithstandingitstermination,continuetoapplytoallsuchretained
-ConfidentialInformation.
-3.ASSIGNMENT:
-NeitherPartymayassign,orotherwisetransfer,itsrightsordelegateitsdutiesorobligations
-underthisAgreement,withoutexpresswrittenconsentoftheotherParty.Anyattemptto
-assign,orotherwisetransfer,thisAgreementisvoidunlesspriorexpresswrittenconsentwas
+Page 4 of 72.8
+Termination of the Agreement: Either Party may terminate this Agreement with thirty (30)
+days prior written notice. Either Party may terminate this Agreement within fifteen (15) days
+written notice in case of any material breach by the other Party. Upon termination of this
+Agreement or upon the request of Disclosing Party, whichever occurs first, the Receiving Party
+shall either deliver to Disclosing Party, or destroy/erase, all records of whatever nature in the
+Receiving Party’s possession, custody or control, which contain any Confidential Information or
+which were received by the Receiving Party from the Disclosing Party. However, to the extent
+the aforesaid records form part of permanent records of the Receiving Party, and the Receiving
+Party is bound by law or regulatory requirement to preserve such, the Receiving Party may
+maintain copies of the records provided it gives the Disclosing Party written notice thereof. In
+the event the Receiving Party retains possession or control over the Disclosing Party’s
+Confidential Information following the term of this Agreement, the provisions of this
+Agreement shall, notwithstanding its termination, continue to apply to all such retained
+Confidential Information.
+3.
+ASSIGNMENT:
+Neither Party may assign, or otherwise transfer, its rights or delegate its duties or obligations
+under this Agreement, without express written consent of the other Party. Any attempt to
+assign, or otherwise transfer, this Agreement is void unless prior express written consent was
 obtained.
-4.INJUNCTIVERELIEF:
-ThePartiesagreethat,intheeventofabreachorthreatenedbreachofthetermsofthis
-AgreementbytheReceivingParty,theDisclosingPartyshallbeentitledtoaninjunctionin
-additiontoandnotinlieuofanyotherlegalorequitablereliefincludingmoneydamagesand
-toseekanordercompellingspecificperformanceofthisAgreement.
-5.SEVERABILITY:
-ThePartiesheretoagreethatifatanytime,anyoftheterms,conditionsand/orprovisionsof
-thisAgreementaredeclaredtobeinvalidorunenforceabletoanyextentundertheapplicable
-lawsorunderdirectionsorordersofanyjudicialorothercompetentauthority,thisAgreement
-continuetobeinforce,asifsuchclausewasneverinexistence.
-6.NOTICE:
-Page5of7Allnotices,communication,requeststobegivenormadetoanyofthePartiesheretoshallbe
-inwriting.Suchnotices,communications,requestsshallbedeemedtohavebeengivenor
-madewhenitisdeliveredbyhandorbyregisteredpostatsuchparty’saddressstatedinthe
-titleoftheAgreementand/orsuchotheraddressasmaybenotifiedbytheParty.Anynotice
-receivedbyelectronicmailshallnotbeconsideredanoticeunderthisAgreement.
-7.NONSOLICITATION
-ReceivingPartyagreethatitalongwithitsAffiliates,willnotforaperiodofeighteenmonths
-fromthedateofthisAgreementdirectlyorindirectlysolicitforemploymentorhireinany
-capacity(whetherasanemployee,consultantorotherwise)(a)anyemployeeorofficerofthe
-DisclosingPartywithwhomitwouldhavehadface-to-facemeetingsinconnectionwiththe
-PurposeduringtheperiodbeforeformalwrittenindicationofinterestinthePurposeis
-submitted,andthereafter(b)anyemployeeorofficeroftheDisclosingPartywithwhomthere
-iscontactorwhobecameknowntoReceivingPartyinconnectionwithevaluationofthe
-Purpose.Notwithstandingtheforegoing,however,thisnon-solicitationofemployeescovenant
-shallnotcoveranyemployee(i)whocontactsaReceivingPartyoritsAffiliatesonhisorher
-owninitiativeandwithoutanysolicitationbytheReceivingPartyoritsAffiliates,or(ii)who
-respondstoageneralizedsolicitationforemployeesnotspecificallytargetedataDisclosing
-Partyoritssubsidiariesthroughtheuseofmedia,advertisements,professionalsearchfirmsor
+4.
+INJUNCTIVE RELIEF:
+The Parties agree that, in the event of a breach or threatened breach of the terms of this
+Agreement by the Receiving Party, the Disclosing Party shall be entitled to an injunction in
+addition to and not in lieu of any other legal or equitable relief including money damages and
+to seek an order compelling specific performance of this Agreement.
+5.
+SEVERABILITY:
+The Parties hereto agree that if at any time, any of the terms, conditions and/ or provisions of
+this Agreement are declared to be invalid or unenforceable to any extent under the applicable
+laws or under directions or orders of any judicial or other competent authority, this Agreement
+continue to be in force, as if such clause was never in existence.
+6.
+NOTICE:
+Page 5 of 7All notices, communication, requests to be given or made to any of the Parties hereto shall be
+in writing. Such notices, communications, requests shall be deemed to have been given or
+made when it is delivered by hand or by registered post at such party’s address stated in the
+title of the Agreement and/or such other address as may be notified by the Party. Any notice
+received by electronic mail shall not be considered a notice under this Agreement.
+7.
+NON SOLICITATION
+Receiving Party agree that it along with its Affiliates, will not for a period of eighteen months
+from the date of this Agreement directly or indirectly solicit for employment or hire in any
+capacity (whether as an employee, consultant or otherwise) (a) any employee or officer of the
+Disclosing Party with whom it would have had face-to-face meetings in connection with the
+Purpose during the period before formal written indication of interest in the Purpose is
+submitted, and thereafter (b) any employee or officer of the Disclosing Party with whom there
+is contact or who became known to Receiving Party in connection with evaluation of the
+Purpose. Notwithstanding the foregoing, however, this non-solicitation of employees covenant
+shall not cover any employee (i) who contacts a Receiving Party or its Affiliates on his or her
+own initiative and without any solicitation by the Receiving Party or its Affiliates, or (ii) who
+responds to a generalized solicitation for employees not specifically targeted at a Disclosing
+Party or its subsidiaries through the use of media, advertisements, professional search firms or
 otherwise
-8.GENERAL:
-ThisAgreementcontainstheentireagreementwithrespecttotheprotectionofConfidential
-Informationtobeexchangedhereunder,andsupersedesallpriorand/orcontemporaneous
-oraland/orwrittenunderstandingsand/oragreementsregardingthissubjectmatter.This
-Non-DisclosureAgreementshallnotbemodifiedoramended,exceptinawritteninstrument
-executedbytheParties.
-9.GOVERNINGLAWANDARBITRATION:
-Anydispute(s)arisingoutofthisAgreementshall,asfaraspossible,besettledamicably
-betweenthepartiesheretofailingwhichthedispute(s)shallbereferredtoasolearbitratorto
-beappointedbymutualconsentofboththeParties.Thearbitrationproceedingsshallbeheld
-inBangalore,IndiaandIndianArbitrationandConciliationAct,1996amendedfromtimeto
-timeshallapplytosucharbitrationproceedings.TheproceedingsshallbeinheldinEnglish
-language.Theawardshallbebindingontheparties,subjecttotheapplicablelawsinforceand
-Page6of7theawardshallbeenforceableinanycompetentcourtoflaw.Saveandexceptarbitration,the
-CourtsinBangaloreshallhaveexclusivejurisdiction.
-10.COUNTERPARTS,HEADINGS:
-ThisAgreementmaybesignedincounterparts(includingfaxedcopiesandanyelectronicor
-digitalformat),eachoneofwhichisconsideredanoriginal,butallofwhichconstituteoneand
-thesameinstrument.Headingsareforconvenienceonlyandnotforinterpretingthis
+8.
+GENERAL:
+This Agreement contains the entire agreement with respect to the protection of Confidential
+Information to be exchanged hereunder, and supersedes all prior and/or contemporaneous
+oral and/or written understandings and/or agreements regarding this subject matter. This
+Non-Disclosure Agreement shall not be modified or amended, except in a written instrument
+executed by the Parties.
+9.
+GOVERNING LAW AND ARBITRATION:
+Any dispute(s) arising out of this Agreement shall, as far as possible, be settled amicably
+between the parties hereto failing which the dispute(s) shall be referred to a sole arbitrator to
+be appointed by mutual consent of both the Parties. The arbitration proceedings shall be held
+in Bangalore, India and Indian Arbitration and Conciliation Act, 1996 amended from time to
+time shall apply to such arbitration proceedings. The proceedings shall be in held in English
+language. The award shall be binding on the parties, subject to the applicable laws in force and
+Page 6 of 7the award shall be enforceable in any competent court of law. Save and except arbitration, the
+Courts in Bangalore shall have exclusive jurisdiction.
+10.
+COUNTERPARTS, HEADINGS:
+This Agreement may be signed in counterparts (including faxed copies and any electronic or
+digital format), each one of which is considered an original, but all of which constitute one and
+the same instrument.
+Headings are for convenience only and not for interpreting this
 Agreement.
-INWITNESSWHEREOFthePartiesheretohavehereuntosetandsubscribedtheirrespectivehands
-thedayandyearfirsthereinabovewritten.
-SIGNEDANDDELIVEREDbythewithinnamed
-(NAMEoftheCOMPANY)
-byitsauthorizedSignatory
-(NAME&DESIGNATIONOFSIGNATORY))
+IN WITNESS WHEREOF the Parties hereto have hereunto set and subscribed their respective hands
+the day and year first hereinabove written.
 )
-)
-)
-)
-SIGNEDANDDELIVEREDbythewithin
-ResoluteAISoftwarePrivateLimited
-byitsauthorizedSignatory
-SanjayKumarJha–Founder&CEO)
-)
-)
-)
-Page7of7
+SIGNED AND DELIVERED by the within named)
+(NAME of the COMPANY))
+by its authorized Signatory)
+(NAME & DESIGNATION OF SIGNATORY))
+SIGNED AND DELIVERED by the within)
+Resolute AI Software Private Limited)
+by its authorized Signatory)
+Sanjay Kumar Jha – Founder & CEO)
+Page 7 of 7
