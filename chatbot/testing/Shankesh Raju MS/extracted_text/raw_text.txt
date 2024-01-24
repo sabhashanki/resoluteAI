@@ -1,0 +1,66 @@
+SHANKESH RAJU MS Chennai, India  |  Mobile  |  Email  |  GitHub  |  LinkedIn  |  Hugging Face
+SUMMARY Highly motivated and result oriented Machine Learning Engineer/Data Scientist with a strong foundation in developing, implementing and analysing ML models. Optimising algorithms for improved accuracy and processing time with appropriate model selection. Deploying tested out RESTful APIs in Cloud platform as Docker containers
+EXPERIENCE ResoluteAI Software (Data Science Intern - GenAI) Dec 2023 – Present Project Description •Document Chatbot- To develop a chatbot that provides us information from the document(pdf, rst, txt, md) in 21 languages. Implemented using Langchain ML framework along with OpenAI for text embeddings, vector databases like FAISS, CHROME and PINECONE for indexing the embeddings eﬃciently and Streamlit for deployment.
+•Chat2VIS - To develop a chatbot that reads csv ﬁle and provide Matplotlib visualisation using OpenAI code completion model and Langchain pandas agent. Visualising the data frame by generating code and implementing it using visualisation libraries like Matplotlib, Plotly and Seaborn
+Roles and Responsibilities •Designing, developing, and implementing generative AI models and algorithms utilising state-of-the-art techniques such as GPT, VAE, and GANs.
+•Conducting research to stay up-to-date with the latest advancements in generative AI, machine learning, and deep learning techniques and identify opportunities to integrate them into our products and services.
+•Optimising existing generative AI models for improved performance, scalability, and eﬃciency
+•Developing and maintaining AI pipelines, including data preprocessing, feature extraction, model training, and evaluation
+•Contributing to the establishment of best practices and standards for generative AI development within the organization
+Achievements •Collaborated with ML open source community in developing AI/ML projects - Krish Naik - ML Open Source Projects (Pull Request #137) Environment Streamlit (1.24.0), Pandas (2.1.4), OpenAI (1.7.1), Matplotlib (3.8.2), Langchain (0.1.0), Deep Translator (1.11.4), BeautifulSoup4 (4.12.2), ChromaDB (0.4.22), FAISS_CPU (1.7.4), Huggingface_Hub (0.20.2), PyPDF2 (3.0.1)
+iNeuron (Machine Learning Intern) Aug 2023 – Present Project Description •Banking Bot - To develop a bot using Natural Language Processing and Deep Learning techniques that will be able to give answers to various banking-related issues like your bank ID, transaction details, Security services, loan policies, account status etc.
+•License plate detection - To build a solution that should recognise vehicle number with uttermost clarity in any circumstance. With varying distances and colour combinations, it should work for any Indian continent
+•Image Captioning - To develop a deep learning model to generate textual description of an image. It uses both Natural Language Processing and Computer Vision to generate the captions
+Roles and Responsibilities •Design and Development: Develop and implement ML models, including deep learning algorithms, using frameworks such as PyTorch, TensorFlow, and Keras
+•Data Handling: Build and manage data pipelines for training and evaluating machine learning models
+•Building and modifying(ﬁne-tuning) pre-trained enterprise-grade large language models(LLM) and multi-modal models 
+•Demonstrate algorithms to meet accuracy requirements through statistical analyses and error estimation
+•Participated in the entire software development lifecycle, building, testing and delivering high-quality solutions
+•Problem-Solving: Apply analytical and problem-solving skills to tackle complex challenges in AI/ML development and implementation
+•Research new AI models and trends to understand how we can maximise the usage of our existing models and/or whether we should adopt new models
+•Collaboration and Innovation: Work closely with cross-functional teams to integrate AI/ML technologies into broader systems and applications
+•Contribution to open source AI projects and ML community
+•Image Processing: Utilise image processing libraries like OpenCV for computer vision tasks, enhancing the capabilities of our AI solutions
+•Continuous Learning: Stay abreast of the latest developments in AI/ML ﬁelds and continuously innovate our approaches and techniques
+Achievements •Collaborated with ML open source community in developing AI/ML projects - Krish Naik - ML Open Source Projects (Pull Request #26) Environment Yolo V8, LTSM, Django (4.1), U2NET, FastAPI (0.104.0)
+Indian Institute of Technology, Bombay (ML Development and Research Intern) Sept 2022 – June 2023  Project Description •Khul Ke social media platform - Twitter-like social media platform incorporated with AI modules such as topic classiﬁcation, keyword generation and hashtag generation based on the Romanised Indian short text. Topic classiﬁcation uses RoBERTa LLM ﬁne-tuned for 14 custom topics. KeyBERT LLM and Spacy to  extract Noun and NER keywords, and OpenAI API for the hashtag generation
+•Social Security number masking - Develop a deep learning model to detect and mask unique social security number for privacy concerns. We need to classify the document containing the social security number across the pile, identify the reading direction and mask ﬁrst eight digits
+Roles and Responsibilities •Design and validation of novel AI (deep learning)  methodologies, algorithms, and techniques for solving complex challenges in image recognition
+•Experience in generative AI, natural language processing, computer vision, or related areas
+•Analyse datasets to identify patterns, trends, and insights that can improve the learning, generalisability, and robustness of AI models. 
+•Extensive quality evaluation and regression testing of the developed solution to meet strict quality guidelines
+•Actively participate in design discussions to enhance end-to-end development of the solution
+•Training ﬁnal models, including techniques such as transfer learning, data augmentation, etc. to optimise models for use in a production environment
+•Continuously optimise and improve the image processing pipeline for speed, accuracy, and eﬃciency
+•Work closely with software engineers to integrate the models into ﬁnal production systems
+•Participate in code reviews, ensuring code quality and best practices
+	Achievements •Improved large language models(LLM) performance by 19% in topic classiﬁcation
+Environment YOLO V8 (Repository), Python (3.10), FastAPI (0.104.0), KeyBERT (Repository), RoBERTa (Repository), Spacy (3.5.0),  NLTK (3.8), Document Image Transformer (Repository), Docker (6.0.1), Pandas (1.5.1), EasyOCR (1.6.1),  OpenCV (4.7.0.68), Selenium (4.5.0), PyTesseract (0.3.10), Selenium
+Wipro Limited (System Administrator)
+April 2014 – Jan 2017  Project Description •Takeda Pharmaceuticals - Well known Japanese Pharmaceutical company based out of Germany having more than 400+ ESX servers and 3000+ VMWare virtual servers across 70+ countries primarily used for medicine manufacturing and research.
+Roles and Responsibilities  
+•Design and implement large-scale Windows Server, VMware, and Citrix environments.
+•Vmware management : Creation of Virtual Machine , VM migration , VM motion . Management of VSpare , Vcenter and ESXI Server
+•Monitor system performance and proactively identify and resolve issues
+•Develop automation scripts to streamline system administration tasks
+•Experience in high level diagnostics & troubleshooting of VMware ESX, excellent troubleshooting and System Administration skills on VMware products and tools
+•Handled high-priority issues with direct customer interaction and provided solutions
+•Collaborate with other teams to implement and maintain IT security policies and procedures, including antivirus, backup, and disaster recovery solutions.
+•Evaluate new technologies and make recommendations for improvements to existing systems
+•Experience in performance tuning of VMware servers and Virtual sessions and management of servers resources between virtual machines
+•Coordinating with vendors(HP , Hitachi, Dell, Cisco, Veritas) for hardware failure and replacement, and providing Root Cause Analysis report (RCA) to the client in the event of unexpected failure
+•Ensure that assigned infrastructure at the client site is conﬁgured, installed, tested, and operational
+Achievements •Transitioned 300+ servers across multiple regions(Japan, Germany, USA, UK, Australia) with minimum downtime 300+ servers across multiple regions(Japan, Germany, USA, UK, Australia) with minimum downtime Achievements
+•Migrated 40+ virtual machine to backup ESX host in business hours due to unexpected host failure with minimum downtime
+Environment Veritas NetBackup (7.7.1), HP Data Protector (9.0), Oracle (11G), Unix RHEL (7.1), Windows Server (2012R2 and 2016), VMware Workstation Pro (11.1)
+TECHNICAL SKILLS Languages - Python (Proﬁcient), C++ (Familiar)
+Web Frameworks/APIs -> Django, Flask, FastAPI
+ML Frameworks - NumPy, Pandas, Matplotlib, Seaborn, Scikit-Learn, PyTorch, OpenCV, TensorFlow, Keras
+Database Technologies - MySQL, MongoDB
+Version Control - Git
+Deployment and Infrastructure - Docker, Amazon Web Service(AWS), Heroku
+Hard Skills -  Data structures, Deep Learning (Intermediate), Predictive Modelling, Computer Vision (Intermediate), Natural Language Processing (Intermediate), Hyper-Tuning, Statistical Modelling, Data Visualisation ,Data Modelling and Evaluation
+EDUCATION 7.1 CGPA -  Bachelor of Engineering, Computer Science, Anna University
+83.6% - Board of Higher Secondary Education, Tamil Nadu 
+83.1% -  Board of Secondary Education, Tamil Nadu 
+CERTIFICATION IBM Machine Learning Professional Certiﬁcate (May - Sept 2022)

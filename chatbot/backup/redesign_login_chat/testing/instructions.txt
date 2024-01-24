@@ -11,4 +11,4 @@ PyPDF2==3.0.1
 pickle4==0.0.1
 langchain_openai==0.0.3
 python-dotenv==1.0.1
-streamlit_extras==0.0.9
+streamlit_extras==0.3.6

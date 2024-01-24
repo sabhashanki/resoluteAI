@@ -2,9 +2,8 @@ import yaml
 import streamlit as st
 import streamlit_authenticator as stauth
 from yaml.loader import SafeLoader
-from utils import add_company_logo
+
 def main():
-    add_company_logo()
     with open('./config.yaml') as file:
         config = yaml.load(file, Loader=SafeLoader)
 
@@ -16,10 +15,15 @@ def main():
         config['preauthorized']
     )
 
-    if authenticator.register_user('Register user', preauthorization=False):
-        st.success('User registration successfully')
+    username_forgot_pw, email, random_password = authenticator.forgot_password('Forgot password')
+    if username_forgot_pw:
+        st.success(f'New random password is : {random_password}.. Change it in next login')
 
-    with open('./config.yaml', 'a') as file:
+    elif username_forgot_pw == False:
+        st.error('Username not found')
+
+
+    with open('./config.yaml', 'w') as file:
         yaml.dump(config, file, default_flow_style=False)
 
 if __name__ == '__main__':

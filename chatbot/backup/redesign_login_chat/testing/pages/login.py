@@ -2,15 +2,9 @@ import yaml
 import streamlit as st
 import streamlit_authenticator as stauth
 from yaml.loader import SafeLoader
-from utils import add_company_logo
-from dotenv import load_dotenv
-
 import os
 
 def main():
-    load_dotenv()
-    add_company_logo()
-
     with open('./config.yaml') as file:
         config = yaml.load(file, Loader=SafeLoader)
 
@@ -26,6 +20,14 @@ def main():
     if st.session_state["authentication_status"]:
         st.title(f'Welcome *{st.session_state["name"]}*')
         st.subheader('Click on the Chat to upload document and access AI chatbot')
+        user_name = st.session_state["name"]
+        parent = os.getcwd()
+        path = os.path.join(parent, user_name)
+        if not os.path.exists(path):
+            os.mkdir(path)
+        chatBtn = st.button('Click to Chat')
+        if chatBtn:
+            st.switch_page('pages/chat.py')
         with st.sidebar:
                authenticator.logout("Logout", "sidebar")
     elif st.session_state["authentication_status"] is False:

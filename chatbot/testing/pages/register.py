@@ -2,9 +2,9 @@ import yaml
 import streamlit as st
 import streamlit_authenticator as stauth
 from yaml.loader import SafeLoader
-from utils import add_company_logo
+from streamlit_extras.grid import grid
+
 def main():
-    add_company_logo()
     with open('./config.yaml') as file:
         config = yaml.load(file, Loader=SafeLoader)
 

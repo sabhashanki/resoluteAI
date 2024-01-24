@@ -1,11 +1,13 @@
 from langchain.chains.question_answering import load_qa_chain
-from langchain.text_splitter import CharacterTextSplitter
-from langchain.llms import OpenAI
-from langchain_openai.llms.base import OpenAI
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain_community.vectorstores import Chroma, FAISS
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.llms import OpenAI
+from langchain_openai import OpenAIEmbeddings
+from langchain_community.vectorstores import Chroma, FAISS, Pinecone
 from deep_translator import GoogleTranslator
+from langchain.document_loaders import PyPDFDirectoryLoader
 import streamlit as st
+from streamlit_extras.switch_page_button import switch_page
+import pinecone
 import streamlit_authenticator as stauth
 from yaml.loader import SafeLoader
 from PyPDF2 import PdfReader
@@ -22,10 +24,14 @@ embeddings = OpenAIEmbeddings()
 chain = load_qa_chain(llm, chain_type='stuff')
 vector_db = None
 st.set_page_config(layout = 'centered', page_title = 'Chat with the Document')
+index_name="langchainvector"
+
 
 # Home Page
 def home():
     st.title("This is my Home page")
+    loginBtn = st.button('Login')
+    switch_page("login")
     
 # Login Page
 def login():
@@ -40,7 +46,7 @@ def login():
         config['cookie']['expiry_days'],
         config['preauthorized']
     )
-    authenticator.login('Login', location = 'sidebar')
+    authenticator.login('Login', location = 'main')
     if st.session_state["authentication_status"]:
         st.title(f'Welcome *{st.session_state["name"]}*')
         st.subheader('Click on the Chat to upload document and access AI chatbot')
@@ -110,6 +116,8 @@ def change_pass():
     if st.session_state["authentication_status"]:
         if authenticator.reset_password(st.session_state["username"], 'Reset password'):
             st.success('New password changed')
+        with st.sidebar:
+           authenticator.logout("Logout", "sidebar")
     if not st.session_state["authentication_status"]:
         st.subheader('You need to login to change the password')
     with open('./config.yaml', 'w') as file:
@@ -130,6 +138,8 @@ def update_profile():
     if st.session_state["authentication_status"]:
         if authenticator.update_user_details(st.session_state["username"], 'Update user details'):
             st.success('Entries updated successfully')
+        with st.sidebar:
+               authenticator.logout("Logout", "sidebar")
     if not st.session_state["authentication_status"]:
         st.subheader('You need to login to update the profile')
     with open('./config.yaml', 'a') as file:
@@ -137,6 +147,10 @@ def update_profile():
 
 
 def extract_pdf(pdf_folder, path):
+    # for pdf in pdf_folder:
+    #     file_loader=PyPDFDirectoryLoader(pdf)
+    #     documents=file_loader.load()
+    #     return documents
     text = ""
     for pdf in pdf_folder:
         pdf_reader = PdfReader(pdf)
@@ -162,30 +176,23 @@ def extract_data(folder, path):
 
 
 def process_text(text, path):
-    text_splitter = CharacterTextSplitter(
-        separator="\n",
-        chunk_size=1000,
-        chunk_overlap=100,
+    pinecone.init(api_key="db6b2a8c-d59e-48e1-8d5c-4c2704622937",environment="gcp-starter")
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=800,
+        chunk_overlap=50,
         length_function=len
     )
     chunks = text_splitter.split_text(text)
     embeddings = OpenAIEmbeddings()
     vec_db_name = config['VECTOR_DB']['MODEL_NAME']
-
-    if vec_db_name == 'FAISS':
+    if vec_db_name == 'PINECONE':
         try:
-            st.info('Creating OpenAI embeddings with FAISS.... Please wait', icon="ℹ️")
-            vector_db = FAISS.from_texts(chunks, embeddings)
-            vector_db.save_local(f"{path}/faiss_index")
+            st.info('Creating OpenAI embeddings with PINECONE.... Please wait', icon="ℹ️")
+            vector_db=Pinecone.from_texts(chunks,embeddings,index_name=index_name)
             st.success('Embeddings generated... Start the conversations', icon="✅")
         except Exception as e:
-            st.error(f'Failed to create embeddings : {e}')
-
-    if vec_db_name == 'CHROMA':
-        st.info('Creating OpenAI embeddings with CHROMA.... Please wait', icon="ℹ️")
-        vector_db = Chroma.from_texts(chunks, embeddings, persist_directory = f"{path}/chrome_index")
-        st.success('Embeddings generated... Start the conversations', icon="✅")
-
+            st.write(e)
+    return vector_db
 
 def translate_text(text, source='auto', target='hi'):
     return GoogleTranslator(source=source, target=target).translate(text)
@@ -219,13 +226,13 @@ def lang_select(user_lang):
         if user_lang == key:
             return value
 
-def query_answer(query):
-    global vector_db
-    docs = vector_db.similarity_search(query)
+def query_answer(query, vector_db):
+    docs = vector_db.similarity_search(query, k=2)
     response = chain.run(input_documents=docs, question=query)
     return response
 
 def chatbox(target):
+    global vector_db
     st.subheader('Chat with the Document !!')
     if 'messages' not in st.session_state:
         st.session_state.messages = []
@@ -239,7 +246,7 @@ def chatbox(target):
         with st.chat_message('assistant'):
             message_placeholder = st.empty()
             raw_prompt = translate_text(prompt, 'auto', 'en')
-            result = translate_text(query_answer(raw_prompt), 'en', target)
+            result = translate_text(query_answer(raw_prompt, vector_db), 'en', target)
             result2 = ""
             for chunk in result.split():
                 result2 += chunk + " "
@@ -259,65 +266,60 @@ def chatpage():
         config['cookie']['expiry_days'],
         config['preauthorized']
     )
-    with st.sidebar:
-        doc_type = st.selectbox('Select document type', (
-                    'None',
-                    'pdf', 
-                    'txt',
-                    'rst',
-                    'md',
+    if st.session_state["authentication_status"]:
+        with st.sidebar:
+            authenticator.logout("Logout", "sidebar")
+            doc_type = st.selectbox('Select document type', (
+                        'None',
+                        'pdf', 
+                        'txt',
+                        'rst',
+                        'md',
+                        )
                     )
-                )
-        file_folder = st.file_uploader("Upload the document",type=['pdf','txt','md','rst'],accept_multiple_files=True)           
-        process_button=st.button("Create Embeddings")
-        user_lang =st.selectbox('Select Language', (
-            'English', 
-            'Tamil', 
-            'Hindi', 
-            'Malayalam',
-            'Kannada',
-            'Telugu',
-            'Marathi', 
-            'Assamese', 
-            'Bengali', 
-            'Gujarati',
-            'Konkani',
-            'Oriya',
-            'Punjabi',
-            'Sanskrit',
-            'Urdu',
-            'Chinese(simplified)',
-            'French',
-            'Korean',
-            'Japanese',
-            'Portuguese',
-            'Italian',
-            'Russian'
-            ))
-        if st.session_state["authentication_status"]:
+            file_folder = st.file_uploader("Upload the document",type=['pdf','txt','md','rst'],accept_multiple_files=True)           
+            process_button=st.button("Create Embeddings")
+            user_lang =st.selectbox('Select Language', (
+                'English', 
+                'Tamil', 
+                'Hindi', 
+                'Malayalam',
+                'Kannada',
+                'Telugu',
+                'Marathi', 
+                'Assamese', 
+                'Bengali', 
+                'Gujarati',
+                'Konkani',
+                'Oriya',
+                'Punjabi',
+                'Sanskrit',
+                'Urdu',
+                'Chinese(simplified)',
+                'French',
+                'Korean',
+                'Japanese',
+                'Portuguese',
+                'Italian',
+                'Russian'
+                ))
+                
             user_name = st.session_state["name"]
             parent = os.getcwd()
             path = os.path.join(parent, user_name)
             embedding_path = os.path.join(path, 'embeddings')
             text_path = os.path.join(path, 'extracted_text')
-            if process_button:
-                if doc_type == 'pdf':
-                    raw_text = extract_pdf(file_folder, text_path)
-                    process_text(raw_text, embedding_path)
-                else:
-                    raw_text = extract_data(file_folder, text_path)
-                    process_text(raw_text, embedding_path)
-            try:
-                if vec_db_name == 'FAISS':
-                    vector_db = FAISS.load_local(f'{embedding_path}/faiss_index', embeddings)
-                if vec_db_name == 'CHROMA':
-                    vector_db = Chroma(persist_directory = f'{embedding_path}/chrome_index',
-                    embedding_function = embeddings )
-            except:
-                st.error('Create Embeddings to access the vector stores!!!')
-                
-        else:
-            st.subheader('Login and upload PDFs to access the chat module')
+            # if process_button:
+            #     if doc_type == 'pdf':
+            #         raw_text = extract_pdf(file_folder, text_path)
+            #         vector_db = process_text(raw_text, embedding_path)
+            #     else:
+            #         raw_text = extract_data(file_folder, text_path)
+            #         vector_db = process_text(raw_text, embedding_path)
+    else:
+        st.subheader('Login and upload PDFs to access the chat module')
+    raw_text = extract_pdf(file_folder, text_path)
+    vector_db = process_text(raw_text, embedding_path)
     chatbox(lang_select(user_lang))
 
 
