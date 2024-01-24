@@ -10,7 +10,7 @@ load_dotenv()
 st.set_page_config(layout='wide')
 st.markdown("<h1 style='text-align: center; font-weight:bold; font-family:comic sans ms; padding-top: 0rem;'> Chat2VIS</h1>", unsafe_allow_html=True)
 st.markdown("<h2 style='text-align: center;padding-top: 0rem;'>Creating Visualisations using Natural Language with ChatGPT and Code Llama</h2>", unsafe_allow_html=True)
-
+st.set_option('deprecation.showPyplotGlobalUse', False)
 
 def extract_python_code(text):
     pattern = r'```python\s(.*?)```'
@@ -42,22 +42,30 @@ with st.sidebar:
     # if uploaded_file:
     #     # Read in the data, add it to the list of available datasets. Give it a nice name.
     #     file_name = uploaded_file.name[:-4].capitalize()
-    df = pd.read_csv(uploaded_file)
-    chosen_dataset = dataset_container.radio(":bar_chart: Choose your data:", datasets.keys(), index=index_no)
-
-st.dataframe(df, hide_index=True)
+    if uploaded_file:
+        df = pd.read_csv(uploaded_file)
+        df.drop_duplicates(inplace = True)
+        chosen_dataset = dataset_container.radio(":bar_chart: Choose your data:", datasets.keys(), index=index_no)
+try:
+    st.dataframe(df, hide_index=True)
+except:
+    st.write('Upload the CSV file')
 
 
 question = st.text_area(":eyes: What would you like to visualise?", height=2)
 go_btn = st.button("Go…")
 
-code_prompt = """
-            Generate the code <code> for plotting the previous data in plotly,
-            in the format requested. The solution should be given using plotly
-            and only plotly. Do not use matplotlib.
-            Return the code <code> in the following
-            format ```python <code>```
-        """
+code_prompt = """Generate the code <code> for plotting the pandas dataframe {df} in Matplotlib using Python 3.10,
+            in the format requested. The solution should be given using Matplotlib
+            and only Matplotlib. Return only the code without any comments and linebreak for each sentence       """
+code_prompt += "\nDataframe has " + str(len(df.columns)) + 'with column names ' + str(df.columns)
+for i in df.columns:
+    if df.dtypes[i] == 0:
+        code_prompt += '\nColumn ' + str(i) + ' has categorical datatype'
+code_prompt += "\n Remaining all columns belong to int64 or float datatype"
+code_prompt += "\nLabel the x and y axes appropriately."
+code_prompt += "\nAdd a title. Set the fig suptitle as empty."
+
 
 if go_btn:
     client = OpenAI()
@@ -65,21 +73,26 @@ if go_btn:
     model="gpt-3.5-turbo",
     messages=[{"role":"system", "content":code_prompt},
          {"role":"user", "content":question}])
-    st.write(response.choices[0].message.content)
-    code = extract_python_code(response.choices[0].message.content)
+    code = response.choices[0].message.content
+    # code = extract_python_code(response.choices[0].message.content)
+    # st.write(code)
+    code = "import matplotlib.pyplot as plt\n" + str(code)
+    # code = str(code)
     st.write(code)
+    plot_area = st.empty()
+    plot_area.pyplot(exec(code)) 
     # exec(code)
-    llm = ChatOpenAI(model="gpt-4")
-    pandas_df_agent = create_pandas_dataframe_agent(
-                llm,
-                df,
-                verbose=True,
-                return_intermediate_steps=True,
-                agent_type=AgentType.OPENAI_FUNCTIONS,
-                handle_parsing_errors=False,
-            )
+    # llm = ChatOpenAI(model="gpt-4")
+    # pandas_df_agent = create_pandas_dataframe_agent(
+    #             llm,
+    #             df,
+    #             verbose=True,
+    #             return_intermediate_steps=True,
+    #             agent_type=AgentType.OPENAI_FUNCTIONS,
+    #             handle_parsing_errors=False,
+    #         )
 
-    answer = pandas_df_agent(question)
-    if answer["intermediate_steps"]:
-        action = answer["intermediate_steps"][-1][0].tool_input["query"]
-        st.write(f"Executed the code ```{action}```")
+    # answer = pandas_df_agent(question)
+    # if answer["intermediate_steps"]:
+    #     action = answer["intermediate_steps"][-1][0].tool_input["query"]
+    #     st.write(f"Executed the code ```{action}```")
