@@ -1,7 +1,10 @@
 import streamlit as st
 from pathlib import Path
 from PyPDF2 import PdfReader
-import pinecone, pickle, os, configparser
+import pinecone
+import configparser
+import os
+import pickle
 import streamlit_authenticator as stauth
 from streamlit_extras.app_logo import add_logo 
 from langchain_openai import OpenAIEmbeddings
@@ -65,11 +68,12 @@ def process_text(text, path):
 
         if vec_db_name == 'PINECONE':
             st.info('Creating OpenAI embeddings with PINECONE.... Please wait', icon="ℹ️")
+            st.write(chunks)
             vector_db = Pinecone.from_texts(chunks,embeddings,index_name=index_name)
+            st.write(e)
             st.success('Embeddings generated... Start the conversations', icon="✅")
     except Exception as e:
         st.write(e)
-
     return vector_db
 
 def translate_text(text, source='auto', target='hi'):
