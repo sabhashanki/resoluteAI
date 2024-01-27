@@ -1,6 +1,7 @@
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains.question_answering import load_qa_chain
 from langchain.embeddings.openai import OpenAIEmbeddings
+from streamlit_option_menu import option_menu
 from deep_translator import GoogleTranslator
 from langchain.vectorstores import Pinecone
 import streamlit_authenticator as stauth
@@ -23,6 +24,120 @@ pinecone.init(api_key="db6b2a8c-d59e-48e1-8d5c-4c2704622937",environment="gcp-st
 llm=OpenAI(model_name="gpt-3.5-turbo-instruct")
 chain=load_qa_chain(llm,chain_type="stuff")
 index_name="langchainvector"
+
+
+# Home Page
+def home():
+    st.title("This is my Home page")
+
+
+# Login Page
+def login():
+    st.title("Login page")
+    with open('./config.yaml') as file:
+        config = yaml.load(file, Loader=SafeLoader)
+
+    authenticator = stauth.Authenticate(
+        config['credentials'],
+        config['cookie']['name'],
+        config['cookie']['key'],
+        config['cookie']['expiry_days'],
+        config['preauthorized']
+    )
+    authenticator.login('Login', location = 'main')
+    if st.session_state["authentication_status"]:
+        st.title(f'Welcome *{st.session_state["name"]}*')
+        st.subheader('Click on the Chat to upload document and access AI chatbot')
+        user_name = st.session_state["name"]
+        parent = os.getcwd()
+        path = os.path.join(parent, user_name)
+        if not os.path.exists(path):
+            os.mkdir(path)
+        with st.sidebar:
+               authenticator.logout("Logout", "sidebar")
+    elif st.session_state["authentication_status"] is False:
+        st.error('Username/password is incorrect')
+    elif st.session_state["authentication_status"] is None:
+        st.warning('Please enter your username and password')
+
+
+# Register Page
+def register():
+    st.title("Register page")
+    with open('./config.yaml') as file:
+        config = yaml.load(file, Loader=SafeLoader)
+
+    authenticator = stauth.Authenticate(
+        config['credentials'],
+        config['cookie']['name'],
+        config['cookie']['key'],
+        config['cookie']['expiry_days'],
+        config['preauthorized']
+    )
+    if authenticator.register_user('Register user', preauthorization=False):
+        st.success('User registration successfully')
+    with open('./config.yaml', 'a') as file:
+        yaml.dump(config, file, default_flow_style=False)
+
+
+def forgot_pass():
+    with open('./config.yaml') as file:
+        config = yaml.load(file, Loader=SafeLoader)
+
+    authenticator = stauth.Authenticate(
+        config['credentials'],
+        config['cookie']['name'],
+        config['cookie']['key'],
+        config['cookie']['expiry_days'],
+        config['preauthorized']
+    )
+    username_forgot_pw, email, random_password = authenticator.forgot_password('Forgot password')
+    if username_forgot_pw:
+        st.success(f'New random password is : {random_password}.. Change it in next login')
+    elif username_forgot_pw == False:
+        st.error('Username not found')
+    with open('./config.yaml', 'w') as file:
+        yaml.dump(config, file, default_flow_style=False)
+
+
+def change_pass():
+    with open('./config.yaml') as file:
+        config = yaml.load(file, Loader=SafeLoader)
+
+    authenticator = stauth.Authenticate(
+        config['credentials'],
+        config['cookie']['name'],
+        config['cookie']['key'],
+        config['cookie']['expiry_days'],
+        config['preauthorized']
+    )
+    if st.session_state["authentication_status"]:
+        if authenticator.reset_password(st.session_state["username"], 'Reset password'):
+            st.success('New password changed')
+    if not st.session_state["authentication_status"]:
+        st.subheader('You need to login to change the password')
+    with open('./config.yaml', 'w') as file:
+        yaml.dump(config, file, default_flow_style=False)
+
+
+def update_profile():
+    with open('./config.yaml') as file:
+        config = yaml.load(file, Loader=SafeLoader)
+
+    authenticator = stauth.Authenticate(
+        config['credentials'],
+        config['cookie']['name'],
+        config['cookie']['key'],
+        config['cookie']['expiry_days'],
+        config['preauthorized']
+    )
+    if st.session_state["authentication_status"]:
+        if authenticator.update_user_details(st.session_state["username"], 'Update user details'):
+            st.success('Entries updated successfully')
+    if not st.session_state["authentication_status"]:
+        st.subheader('You need to login to update the profile')
+    with open('./config.yaml', 'a') as file:
+        yaml.dump(config, file, default_flow_style=False)
 
 
 # Translatiton
@@ -86,6 +201,20 @@ def chatbox():
 		st.session_state.messages.append({"role": "assistant", "content": result})
 
 
+def about(key):
+	selection = st.session_state[key]
+	if selection == 'Home':
+		home()
+	if selection == 'Login':
+		login()
+	if selection == 'Register':
+		register()
+	if selection == 'Forgot Password':
+		forgot_pass()
+
+def tasks():
+	st.write('Tasks')
+
 def main():
 	if 'vector_db' not in st.session_state:
 		st.session_state.vector_db = None
@@ -99,6 +228,9 @@ def main():
 		st.session_state.messages = []
 	st.session_state.txt_path = os.path.join(os.getcwd(), 'extract_text')
 	with st.sidebar:
+		selected5 = option_menu(None, ["Home", "Login", "Register", 'Forgot Passoword'],
+	                        icons=['house', 'login', "register", 'gear'],
+	                        on_change=about, key='menu_5', orientation="vertical")
 		st.session_state.doc_type = st.selectbox('Document type', ('None','PDF','TXT', 'RST','MD'))
 		st.session_state.upload_folder = st.file_uploader('Upload files', type = ['pdf', 'txt', 'rst','md'], accept_multiple_files=True)
 		submitBtn = st.button('Submit') 
