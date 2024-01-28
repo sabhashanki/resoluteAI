@@ -4,10 +4,13 @@ chatbot/mycode/.env
 chatbot/mycode/faiss_index/index.pkl
 chatbot/mycode/faiss_index/index.faiss
 
-.env
+*.env
+*.faiss
+*.pkl
 
 chatbot/backup/mark3_redesigned/mycode/.env
 chatbot/class_chatbot/.env
 chatbot/mycode/.env
 chatbot/testing/__pycache__/utils.cpython-311.pyc
 chatbot/class_chatbot/.env
+/chatbot/class_chatbot/tmp/
