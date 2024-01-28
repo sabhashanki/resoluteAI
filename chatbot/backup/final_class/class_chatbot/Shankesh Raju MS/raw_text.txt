@@ -1,0 +1,17 @@
+SHANKESH RAJU MS
+Chennai, India | +919444941332 | shankeshraju@gmail.com | https://github.com/
+sabhashanki | https://linkedin.com/in/shankeshrajums | https://huggingface.co/sabhashanki
+EXPERIENCE
+ResoluteAI Software
+Data Science Intern - Generative AI (December 2023 – Till Present)
+Roles and Responsibilities
+• Designing, developing, and implementing generative AI models and algorithms utilising state-
+of-the-art techniques such as Generative Pre-Trained Transformers (GPT), Variational auto
+encoder, and Generative adversarial networks (GAN)
+• Research to stay up-to-date with the latest advancements in generative AI, machine learning,
+and deep learning techniques and identify opportunities to integrate them into our products
+and services.
+• Optimising existing generative AI models for improved performance, scalability, and efficiency
+• Developing and maintaining AI pipelines, including data preprocessing, feature extraction,
+model training, and evaluation
+

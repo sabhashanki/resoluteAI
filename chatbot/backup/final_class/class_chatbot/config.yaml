@@ -1,0 +1,50 @@
+cookie:
+  expiry_days: 30
+  key: some_signature_key
+  name: some_cookie_name
+credentials:
+  usernames:
+    andro:
+      email: hello@gmail.com
+      name: Vazkha Oru Vattam
+      password: $2b$12$7SeyWu/6ts8ILOEtKcThvO3sbkngEs4Gv9i9xUuEAKjEoBLkTT9Xq
+    elephant_man:
+      email: elephant_lover@gmail.com
+      name: Andro Shanki
+      password: $2b$12$S4Zc5CFYDOSFV9Wi35pOY.qMAzv7f6xQ0g5B4b6DgkzOWzmRPEXTu
+    sabhashanki:
+      email: test@gmail.com
+      name: shankesh
+      password: $2b$12$YPCeNc397qprTnhI9pXxV.zpxwNT51uvONNKeZoT/.MAEPvVmWmKi
+    shankesh:
+      email: hello@gmail.com
+      name: Shankesh Raju MS
+      password: $2b$12$tMEI/n73JIvNEnwDz97wiuBytU3pjpXbRDneVg1W8CVpT6u8lRtvG
+preauthorized:
+  emails:
+  - melsby@gmail.com
+cookie:
+  expiry_days: 30
+  key: some_signature_key
+  name: some_cookie_name
+credentials:
+  usernames:
+    andro:
+      email: hello@gmail.com
+      name: Vazkha Oru Vattam
+      password: $2b$12$7SeyWu/6ts8ILOEtKcThvO3sbkngEs4Gv9i9xUuEAKjEoBLkTT9Xq
+    elephant_man:
+      email: elephant_lover@gmail.com
+      name: Andro Shanki
+      password: $2b$12$S4Zc5CFYDOSFV9Wi35pOY.qMAzv7f6xQ0g5B4b6DgkzOWzmRPEXTu
+    sabhashanki:
+      email: test@gmail.com
+      name: shankesh
+      password: $2b$12$YPCeNc397qprTnhI9pXxV.zpxwNT51uvONNKeZoT/.MAEPvVmWmKi
+    shankesh:
+      email: hello@gmail.com
+      name: Shankesh Raju MS
+      password: $2b$12$tMEI/n73JIvNEnwDz97wiuBytU3pjpXbRDneVg1W8CVpT6u8lRtvG
+preauthorized:
+  emails:
+  - melsby@gmail.com
