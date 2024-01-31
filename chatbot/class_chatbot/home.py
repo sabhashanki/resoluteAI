@@ -1,4 +1,5 @@
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.chains.question_answering import load_qa_chain
 from langchain_community.vectorstores import Pinecone, FAISS
 from langchain_openai import OpenAIEmbeddings, OpenAI
@@ -13,19 +14,20 @@ from PyPDF2 import PdfReader
 import streamlit as st
 import configparser
 import pinecone
-
-load_dotenv()
 import time
 import yaml
 import os
 
+
 # Initialization
+load_dotenv()
 logger = get_logger(__name__)
-config = configparser.ConfigParser()
-vector_config = configparser.ConfigParser()
+# config = configparser.ConfigParser()
+init_config = configparser.ConfigParser()
 index_name = "langchainvector"
-vector_config.read('./config.ini')
-vec_db_name = vector_config['VECTOR_DB']['MODEL_NAME']
+init_config.read('./config.ini')
+vec_db_name = init_config['VECTOR_DB']['MODEL_NAME']
+embed_model = init_config['EMBEDDING_MODEL']['MODEL_NAME']
 st.set_page_config(layout='centered', page_title='Chat with the Document')
 
 if 'vector_db' not in st.session_state:
@@ -61,12 +63,21 @@ logger.info('Initialization Done')
 
 
 @st.cache_data(persist='disk',experimental_allow_widgets=True)
-def initFunc():
+def initFunc(embed_model):
     logger.info('Initialization inside function')
     pinecone.init(environment="gcp-starter")
     llm = OpenAI(model_name='gpt-3.5-turbo-instruct')
     st.session_state.chain = load_qa_chain(llm, chain_type='stuff')
-    st.session_state.embeddings = OpenAIEmbeddings()
+    if embed_model == 'OPENAI':
+        st.session_state.embeddings = OpenAIEmbeddings()
+        logger.info('Using OpenAI embeddings')
+    if embed_model == 'HUGGINGFACE':
+        logger.info('Using Huggingface embeddings')
+        st.session_state.embeddings = HuggingFaceEmbeddings(
+    model_name="./paraphrase-MiniLM-L6-v2/",
+    model_kwargs={'device': 'cpu'},
+    encode_kwargs={'normalize_embeddings': False}
+)
 
 
 # access profile section
@@ -179,7 +190,7 @@ def update_profile():
 
 
 # process pdf and create embeddings
-@st.cache_data(persist='disk')
+# @st.cache_data(persist='disk')
 def process_text():
     text = ""
     if not os.path.exists(st.session_state.text_path):
@@ -193,6 +204,7 @@ def process_text():
                 pdf_pages += 1
                 text += page.extract_text()
             logger.info('Text extracted from the pdf')
+            st.info(f'PDF count: {len(st.session_state.upload_folder)}, Extracted pages: {pdf_pages}')
             logger.info(f'PDF count: {len(st.session_state.upload_folder)}, page count: {pdf_pages}')
     else:
         for file in st.session_state.upload_folder:
@@ -211,18 +223,18 @@ def process_text():
     logger.info(f'text split into chunks : {len(chunks)}')
     try:
         if vec_db_name == 'PINECONE':
-            st.info('Creating OpenAI embeddings with PINECONE.... Please wait', icon="ℹ️")
+            st.info(f'Creating {embed_model} embeddings with PINECONE.... Please wait', icon="ℹ️")
             st.session_state.vector_db = Pinecone.from_texts(chunks, st.session_state.embeddings, index_name=index_name)
             st.success('Embeddings generated... Start the conversations', icon="✅")
             logger.info('Embeddings created and saved in the pinecone vector database')
         if vec_db_name == 'FAISS':
-            st.info('Creating OpenAI embeddings with FAISS.... Please wait', icon="ℹ️")
+            st.info(f'Creating {embed_model} embeddings with FAISS.... Please wait', icon="ℹ️")
             st.session_state.vector_db = FAISS.from_texts(chunks, st.session_state.embeddings)
             st.session_state.vector_db.save_local(f"{st.session_state.embeddings_path}/faiss_index")
             st.success('Embeddings generated... Start the conversations', icon="✅")
             logger.info('Embeddings created and saved in the FAISS vector store')
     except Exception as e:
-        st.write(f'Embedding creation failed - Check the logs')
+        st.write(f'Clear the cache and run again')
         logger.info(f'Embedding creation failed: {e}')
 
 
@@ -364,7 +376,7 @@ def chatpage():
 # Main function
 def main():
     logger.info('Accessing main function')
-    initFunc()
+    initFunc(embed_model)
     with open('./config.yaml') as file:
         st.session_state.config = yaml.load(file, Loader=SafeLoader)
 
