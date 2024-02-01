@@ -62,6 +62,7 @@ if 'chain' not in st.session_state:
 logger.info('Initialization Done')
 
 
+# Embedding model selection
 @st.cache_data(persist='disk',experimental_allow_widgets=True)
 def initFunc(embed_model):
     logger.info('Initialization inside function')
@@ -190,7 +191,6 @@ def update_profile():
 
 
 # process pdf and create embeddings
-# @st.cache_data(persist='disk')
 def process_text():
     text = ""
     if not os.path.exists(st.session_state.text_path):
